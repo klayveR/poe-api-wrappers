@@ -15,6 +15,6 @@ describe("Path of Exile - Private Leagues", function () {
     });
 
     it("#getMembers() - should return list of private league members", async () => {
-        await expect(API.getMembers("7494", sessionId)).to.be.fulfilled;
+        await expect(API.getMembers(7494, sessionId)).to.be.fulfilled;
     });
 });
