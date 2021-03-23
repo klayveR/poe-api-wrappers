@@ -2,6 +2,7 @@ import "reflect-metadata";
 import "mocha";
 
 import { expect } from "chai";
+
 import { League } from "./League";
 
 describe("Path of Exile - Leagues - League", function () {

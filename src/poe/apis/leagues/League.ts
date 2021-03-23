@@ -2,9 +2,8 @@ import { Type } from "class-transformer";
 
 import { Transformable } from "../../../common/classes";
 import { Realm } from "../../shared/models";
-import { Ladder, Options } from "../ladders";
-import { Rule } from "./Rule";
 import * as Ladders from "../ladders";
+import { Rule } from "./Rule";
 
 export class League extends Transformable {
     id!: string;
@@ -28,8 +27,8 @@ export class League extends Transformable {
     @Type(/* istanbul ignore next */ () => Rule)
     rules?: Rule[];
 
-    @Type(/* istanbul ignore next */ () => Ladder)
-    ladder?: Ladder;
+    @Type(/* istanbul ignore next */ () => Ladders.Ladder)
+    ladder?: Ladders.Ladder;
 
     /**
      * @remarks
@@ -40,7 +39,7 @@ export class League extends Transformable {
      * @returns The ladder for this league
      * @throws [[APIError]]
      */
-    public async getLadder(options?: Options, store = true): Promise<Ladder> {
+    public async getLadder(options?: Ladders.Options, store = true): Promise<Ladders.Ladder> {
         const ladder = await Ladders.get(this.id, options);
 
         if (store) {

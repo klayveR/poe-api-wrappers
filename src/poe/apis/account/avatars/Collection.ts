@@ -1,9 +1,9 @@
 import { Exclude, Type } from "class-transformer";
 
 import { Transformable } from "../../../../common/classes";
+import * as API from "../API";
 import { AvatarsOptions } from "../models";
 import { Avatar } from "./Avatar";
-import * as API from "../API";
 
 export class Collection extends Transformable {
     @Exclude()

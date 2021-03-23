@@ -1,6 +1,6 @@
-import * as Characters from "../characters";
 import { Transformable } from "../../../common/classes";
 import { RealmOptions } from "../../shared";
+import * as Characters from "../characters";
 
 export class Member extends Transformable {
     id!: number;

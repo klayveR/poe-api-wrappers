@@ -2,6 +2,7 @@ import "reflect-metadata";
 import "mocha";
 
 import { expect } from "chai";
+
 import { Collection } from "./Collection";
 
 describe("Path of Exile - Account - Avatars - Collection", function () {
