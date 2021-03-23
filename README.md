@@ -33,7 +33,7 @@ PathOfExile.Settings.userAgent = "my-awesome-tool-name, contact@me.com";
 **Get 10 public stash tab chunks and do something with them**
 
 ```typescript
-let chunk = await PathOfExile.PublicStashTabs.get();
+let chunk = await PathOfExile.PublicStashTabs.getChunk();
 
 for (let i = 0; i < 9; i++) {
     console.log(`This chunk has ${chunk.stashes.length} stashes.`);
