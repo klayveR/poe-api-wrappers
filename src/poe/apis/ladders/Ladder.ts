@@ -1,11 +1,12 @@
 import { Exclude, Expose, Type } from "class-transformer";
 
+import { Transformable } from "../../../common/classes";
 import { Character } from "../characters";
 import * as API from "./API";
 import { Entry } from "./Entry";
 import { Options } from "./models";
 
-export class Ladder {
+export class Ladder extends Transformable {
     @Exclude()
     private _options: Options = {
         limit: 20,

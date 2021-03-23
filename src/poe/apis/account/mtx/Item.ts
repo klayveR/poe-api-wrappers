@@ -1,6 +1,7 @@
+import { Transformable } from "../../../../common/classes";
 import { Property } from "../../../shared/item";
 
-export class Item {
+export class Item extends Transformable {
     slot!: null;
     count!: number;
     verified!: boolean;

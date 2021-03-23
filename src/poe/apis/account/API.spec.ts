@@ -3,9 +3,10 @@ import "mocha";
 
 import { expect } from "chai";
 
+import { APIError } from "../../errors";
 import * as API from "./API";
 
-describe("Path of Exile - Account", function () {
+describe("Path of Exile - Accounts", function () {
     this.timeout(10000);
 
     let sessionId: string;
@@ -14,15 +15,22 @@ describe("Path of Exile - Account", function () {
         sessionId = process.env["POESESSID"] as string;
     });
 
-    /**
-     * API Methods
-     */
-    it("#getProfile(session) - should return account profile", async () => {
-        await expect(API.getProfile(sessionId)).to.be.fulfilled;
+    describe("#getProfile(session)", function () {
+        it("should return account profile", async () => {
+            await expect(API.getProfile(sessionId)).to.be.fulfilled;
+        });
+
+        it("should throw APIError if invalid session id is supplied", async () => {
+            await expect(API.getProfile("invalid")).to.be.rejectedWith(APIError);
+        });
     });
 
     it("#getAvatars(session) - should return account avatars", async () => {
         await expect(API.getAvatars(sessionId)).to.be.fulfilled;
+    });
+
+    it("#getAvatars(session, options) - should return account avatars with options", async () => {
+        await expect(API.getAvatars(sessionId, { page: 2 })).to.be.fulfilled;
     });
 
     it("#getNameByCharacter(character) - should return account name", async () => {

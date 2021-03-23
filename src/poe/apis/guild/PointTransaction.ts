@@ -1,9 +1,10 @@
 import { Type } from "class-transformer";
 
+import { Transformable } from "../../../common/classes";
 import { Account } from "../account";
 import { Guild } from "./Guild";
 
-export class PointTransaction {
+export class PointTransaction extends Transformable {
     id!: number;
     points!: number;
     status!: string;

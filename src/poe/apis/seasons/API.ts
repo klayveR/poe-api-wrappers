@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformed, requestTransformedArray } from "../../functions";
+import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { PlayerHistoryOptions } from "./models";
 import { PlayerHistory } from "./PlayerHistory";
 import { Season } from "./Season";
@@ -11,7 +11,7 @@ import { Season } from "./Season";
  */
 export const get = async (): Promise<Season[]> => {
     const url = new URL(`https://api.pathofexile.com/seasons`);
-    return await requestTransformedArray(Season, url);
+    return await requestTransformedArray(Season, url, { userAgent: Settings.userAgent });
 };
 
 /**
@@ -33,5 +33,5 @@ export const getPlayerHistory = async (
         seasonId,
         id: accountName,
     });
-    return await requestTransformed(PlayerHistory, url);
+    return await requestTransformed(PlayerHistory, url, { userAgent: Settings.userAgent });
 };

@@ -1,6 +1,8 @@
 import { Expose } from "class-transformer";
 
-export class Avatar {
+import { Transformable } from "../../../../common/classes";
+
+export class Avatar extends Transformable {
     custom!: boolean;
     name?: string | null;
     image!: string;

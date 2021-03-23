@@ -1,9 +1,10 @@
 import { Exclude, Expose } from "class-transformer";
 
 import { Fetch } from "../";
+import { Transformable } from "../../../../common/classes";
 import * as API from "../API";
 
-export class Result {
+export class Result extends Transformable {
     @Exclude()
     private offset = 0;
 
@@ -20,6 +21,11 @@ export class Result {
      */
     @Expose({ name: "result" })
     hashes!: string[];
+
+    @Exclude()
+    public set sessionId(sessionId: string | undefined) {
+        this._sessionId = sessionId;
+    }
 
     /**
      * @remarks
@@ -38,10 +44,5 @@ export class Result {
         this.offset += 10;
 
         return await API.getFromHashes(hashes, this._sessionId);
-    }
-
-    @Exclude()
-    public set sessionId(sessionId: string | undefined) {
-        this._sessionId = sessionId;
     }
 }

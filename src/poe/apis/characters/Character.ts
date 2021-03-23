@@ -1,9 +1,8 @@
-import { Expose } from "class-transformer";
-
+import { Transformable } from "../../../common/classes";
 import { Experience } from "../../shared/constants";
 import { Depth } from "./models";
 
-export class Character {
+export class Character extends Transformable {
     name!: string;
     level!: number;
     class!: string;
@@ -18,7 +17,6 @@ export class Character {
     /**
      * Calculates the current level progression and returns it as a percentage value.
      */
-    @Expose()
     get levelProgression(): number {
         for (let i = 1; i <= Experience.length; i++) {
             const nextExp = Experience[i];

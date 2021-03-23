@@ -1,9 +1,10 @@
 import { Type } from "class-transformer";
 
+import { Transformable } from "../../../common/classes";
 import { Member } from "./Member";
 import { RoleElement, SortType } from "./models";
 
-export class Collection {
+export class Collection extends Transformable {
     editable!: boolean;
     total!: number;
     sort!: SortType;

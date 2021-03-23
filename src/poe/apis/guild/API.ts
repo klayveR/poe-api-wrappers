@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformed } from "../../functions";
+import { buildURL, requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { Guild } from "./Guild";
 import { StashHistoryOptions } from "./models";
 import { PointTransactions } from "./PointTransactions";
@@ -13,7 +13,7 @@ import { StashHistory } from "./StashHistory";
  */
 export const get = async (sessionId: string): Promise<Guild> => {
     const url = new URL(`https://api.pathofexile.com/guild`);
-    return await requestTransformed(Guild, url, sessionId);
+    return await requestTransformed(Guild, url, { sessionId, userAgent: Settings.userAgent });
 };
 
 /**
@@ -29,7 +29,10 @@ export const getStashHistory = async (
     options?: StashHistoryOptions
 ): Promise<StashHistory> => {
     const url = buildURL(`https://api.pathofexile.com/guild/${guildId}/stash/history`, options);
-    return await requestTransformed(StashHistory, url, sessionId);
+    return await requestTransformed(StashHistory, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };
 
 /**
@@ -44,7 +47,10 @@ export const getPointTransactions = async (
     options?: StashHistoryOptions
 ): Promise<PointTransactions> => {
     const url = buildURL(`https://api.pathofexile.com/guild/point-transactions`, options);
-    return await requestTransformed(PointTransactions, url, sessionId);
+    return await requestTransformed(PointTransactions, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };
 
 /**
@@ -59,5 +65,8 @@ export const getAccountPointTransactions = async (
     options?: StashHistoryOptions
 ): Promise<PointTransactions> => {
     const url = buildURL(`https://api.pathofexile.com/account/guild/point-transactions`, options);
-    return await requestTransformed(PointTransactions, url, sessionId);
+    return await requestTransformed(PointTransactions, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };

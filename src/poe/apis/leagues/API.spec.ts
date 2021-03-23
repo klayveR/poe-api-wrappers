@@ -8,9 +8,6 @@ import * as API from "./API";
 describe("Path of Exile - Leagues", function () {
     this.timeout(10000);
 
-    /**
-     * API Methods
-     */
     it("#get() - should return list of leagues", async () => {
         await expect(API.get()).to.be.fulfilled;
     });

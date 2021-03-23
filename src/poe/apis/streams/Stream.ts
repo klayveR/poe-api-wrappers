@@ -1,6 +1,8 @@
 import { Expose } from "class-transformer";
 
-export class Stream {
+import { Transformable } from "../../../common/classes";
+
+export class Stream extends Transformable {
     name!: string;
     image?: string;
     status?: string;

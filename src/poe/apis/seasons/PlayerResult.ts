@@ -1,8 +1,9 @@
 import { Expose } from "class-transformer";
 
+import { Transformable } from "../../../common/classes";
 import { Trophy } from "./models";
 
-export class PlayerResult {
+export class PlayerResult extends Transformable {
     leagueId!: string;
     leagueName!: string;
     points!: number;

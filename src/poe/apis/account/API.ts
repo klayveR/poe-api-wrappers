@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformed } from "../../functions";
+import { buildURL, requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import * as Avatars from "./avatars";
 import { AvatarsOptions, ShowcasePinOptions, StashOptions } from "./models";
 import * as MTX from "./mtx";
@@ -16,7 +16,7 @@ import { Stash } from "./stash";
 export const getProfile = async (sessionId: string): Promise<Profile> => {
     const url = new URL(`https://api.pathofexile.com/profile`);
 
-    return await requestTransformed(Profile, url, sessionId);
+    return await requestTransformed(Profile, url, { sessionId, userAgent: Settings.userAgent });
 };
 
 /**
@@ -35,7 +35,10 @@ export const getAvatars = async (
         custom: false,
     });
 
-    return await requestTransformed(Avatars.Collection, url, sessionId);
+    return await requestTransformed(Avatars.Collection, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };
 
 /**
@@ -55,7 +58,9 @@ export const getShowcasePins = async (
         account: accountName,
     });
 
-    return await requestTransformed(ShowcasePins.Collection, url);
+    return await requestTransformed(ShowcasePins.Collection, url, {
+        userAgent: Settings.userAgent,
+    });
 };
 
 /**
@@ -81,7 +86,7 @@ export const getStash = async (
         { accountName, league, tabIndex: tabIndex.toString() }
     );
 
-    return await requestTransformed(Stash, url, sessionId);
+    return await requestTransformed(Stash, url, { sessionId, userAgent: Settings.userAgent });
 };
 
 /**
@@ -97,7 +102,7 @@ export const getNameByCharacter = async (characterName: string): Promise<string>
         { character: characterName }
     );
 
-    const account = await requestTransformed(Name, url);
+    const account = await requestTransformed(Name, url, { userAgent: Settings.userAgent });
     return account.name;
 };
 
@@ -119,6 +124,12 @@ export const getMicrotransactions = async (
         sortOrder,
     };
 
-    const response = await requestTransformed(MTX.Response, url, sessionId, "post", payload);
+    const response = await requestTransformed(
+        MTX.Response,
+        url,
+        { sessionId, userAgent: Settings.userAgent },
+        "post",
+        payload
+    );
     return response.groups;
 };
