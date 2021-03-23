@@ -35,10 +35,16 @@ export const getAvatars = async (
         custom: false,
     });
 
-    return await requestTransformed(Avatars.Collection, url, {
+    const collection = await requestTransformed(Avatars.Collection, url, {
         sessionId,
         userAgent: Settings.userAgent,
     });
+
+    if (options) {
+        collection.options = options;
+    }
+
+    return collection;
 };
 
 /**
