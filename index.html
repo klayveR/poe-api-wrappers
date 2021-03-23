@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@klayver/poe-api-wrappers</title>
+	<meta name="description" content="Documentation for @klayver/poe-api-wrappers">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@klayver/poe-api-wrappers</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@klayver/poe-api-wrappers</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#path-of-exile-api-wrappers" id="path-of-exile-api-wrappers" style="color: inherit; text-decoration: none;">
+					<h1>Path of Exile API Wrappers</h1>
+				</a>
+				<p>This library was created to make interacting with the official and third-party APIs for Path of Exile easier. Data can be requested with a simple function call, the responses are then converted into fully typed class objects which you can interact with. For example, when posting a search query to the trade API, you can immediately request the listings by calling a function on the search result object which contains the hashes (see <a href="#examples">Examples</a>). Please check out the documentation for more information.</p>
+				<p>Since there are so many APIs with varying response structures, things may be incorrect or missing. If you notice something that needs to be added or fixed, please submit an <a href="https://github.com/klayveR/poe-api-wrappers/issues">issue</a>.</p>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h1>Getting started</h1>
+				</a>
+				<p><strong>Install with npm:</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">$ npm i @klayver/poe-api-wrappers --save</span>
+</code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h1>Contributing</h1>
+				</a>
+				<p>Please refer to <a href="https://github.com/klayveR/poe-api-wrappers/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h1>Examples</h1>
+				</a>
+				<a href="#path-of-exile-api" id="path-of-exile-api" style="color: inherit; text-decoration: none;">
+					<h2>Path of Exile API</h2>
+				</a>
+				<blockquote>
+					<p>⚠️ The following examples do not handle errors to keep it simple. You should wrap your calls in a try/catch block or do whatever you do to catch errors (see <a href="#handling-errors">Handling errors</a>). Also, keep in mind that many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.</p>
+				</blockquote>
+				<p>Before making requests to the official API, you should set your user agent, as requested by GGG <a href="https://www.pathofexile.com/forum/view-thread/3019033/page/1#p23790007">here</a>.</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">PathOfExile</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;@klayver/poe-api-wrappers&quot;</span><span style="color: #000000">;</span>
+
+<span style="color: #001080">PathOfExile</span><span style="color: #000000">.</span><span style="color: #001080">Settings</span><span style="color: #000000">.</span><span style="color: #001080">userAgent</span><span style="color: #000000"> = </span><span style="color: #A31515">&quot;my-awesome-tool-name, contact@me.com&quot;</span><span style="color: #000000">;</span>
+</code></pre>
+				<p><strong>Get 10 public stash tab chunks and do something with them</strong></p>
+				<pre><code class="language-typescript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">chunk</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">PathOfExile</span><span style="color: #000000">.</span><span style="color: #001080">PublicStashTabs</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">();</span>
+
+<span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; </span><span style="color: #098658">9</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000">++) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`This chunk has </span><span style="color: #0000FF">${</span><span style="color: #001080">chunk</span><span style="color: #000000FF">.</span><span style="color: #001080">stashes</span><span style="color: #000000FF">.</span><span style="color: #001080">length</span><span style="color: #0000FF">}</span><span style="color: #A31515"> stashes.`</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">chunk</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">chunk</span><span style="color: #000000">.</span><span style="color: #795E26">getNext</span><span style="color: #000000">();</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p><strong>Get the entire Standard league ladder and filter it by online players</strong></p>
+				<pre><code class="language-typescript"><span style="color: #008000">// Get the ladder with the first 200 entries</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ladder</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">PathOfExile</span><span style="color: #000000">.</span><span style="color: #001080">Ladders</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Standard&quot;</span><span style="color: #000000">, { </span><span style="color: #001080">limit:</span><span style="color: #000000"> </span><span style="color: #098658">200</span><span style="color: #000000"> });</span>
+
+<span style="color: #008000">// Request the remaining entries in chunks of 200 until there are no entries left</span>
+<span style="color: #AF00DB">while</span><span style="color: #000000"> ((</span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">ladder</span><span style="color: #000000">.</span><span style="color: #795E26">getNextEntries</span><span style="color: #000000">()) != </span><span style="color: #0000FF">null</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Current entries: </span><span style="color: #0000FF">${</span><span style="color: #001080">ladder</span><span style="color: #000000FF">.</span><span style="color: #001080">entries</span><span style="color: #000000FF">.</span><span style="color: #001080">length</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Filter by online players</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">online</span><span style="color: #000000"> = </span><span style="color: #001080">ladder</span><span style="color: #000000">.</span><span style="color: #795E26">filterBy</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;online&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #001080">online</span><span style="color: #000000FF">.</span><span style="color: #001080">length</span><span style="color: #0000FF">}</span><span style="color: #A31515">/</span><span style="color: #0000FF">${</span><span style="color: #001080">ladder</span><span style="color: #000000FF">.</span><span style="color: #001080">total</span><span style="color: #0000FF">}</span><span style="color: #A31515"> players are currently online.`</span><span style="color: #000000">);</span>
+</code></pre>
+				<p><strong>Execute a search query and get the prices for the first 10 results</strong></p>
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">query</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">    </span><span style="color: #001080">query:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #001080">status:</span><span style="color: #000000"> { </span><span style="color: #001080">option:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;online&quot;</span><span style="color: #000000"> },</span>
+<span style="color: #000000">        </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Shavronne&#039;s Wrappings&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Occultist&#039;s Vestment&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #001080">sort:</span><span style="color: #000000"> { </span><span style="color: #001080">price:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;asc&quot;</span><span style="color: #000000"> },</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">search</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">PathOfExile</span><span style="color: #000000">.</span><span style="color: #001080">Trade</span><span style="color: #000000">.</span><span style="color: #795E26">search</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Standard&quot;</span><span style="color: #000000">, </span><span style="color: #001080">query</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">results</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">search</span><span style="color: #000000">.</span><span style="color: #795E26">getNextItems</span><span style="color: #000000">();</span>
+
+<span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">results</span><span style="color: #000000"> != </span><span style="color: #0000FF">null</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">result</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">results</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">price</span><span style="color: #000000"> = </span><span style="color: #001080">result</span><span style="color: #000000">.</span><span style="color: #001080">listing</span><span style="color: #000000">.</span><span style="color: #001080">price</span><span style="color: #000000">;</span>
+<span style="color: #000000">        </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Item is being sold for </span><span style="color: #0000FF">${</span><span style="color: #001080">price</span><span style="color: #000000FF">.</span><span style="color: #001080">amount</span><span style="color: #0000FF">}</span><span style="color: #A31515"> </span><span style="color: #0000FF">${</span><span style="color: #001080">price</span><span style="color: #000000FF">.</span><span style="color: #001080">currency</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#handling-errors" id="handling-errors" style="color: inherit; text-decoration: none;">
+					<h3>Handling errors</h3>
+				</a>
+				<p>Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the <a href="https://th.pathofexile.com/developer/docs/api-errors">official developer API documentation</a>. Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">PathOfExile</span><span style="color: #000000">.</span><span style="color: #001080">Account</span><span style="color: #000000">.</span><span style="color: #795E26">getAvatars</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;invalid&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">: </span><span style="color: #267F99">unknown</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000"> </span><span style="color: #0000FF">instanceof</span><span style="color: #000000"> </span><span style="color: #267F99">PathOfExile</span><span style="color: #000000">.</span><span style="color: #267F99">APIError</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Request failed with code </span><span style="color: #0000FF">${</span><span style="color: #001080">error</span><span style="color: #000000FF">.</span><span style="color: #001080">code</span><span style="color: #0000FF">}</span><span style="color: #A31515">: </span><span style="color: #0000FF">${</span><span style="color: #001080">error</span><span style="color: #000000FF">.</span><span style="color: #001080">message</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+
+<span style="color: #000000">    </span><span style="color: #008000">// Handle other errors...</span>
+<span style="color: #000000">}</span>
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/pathofexile.html">Path<wbr>OfExile</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
