@@ -8,9 +8,6 @@ import * as API from "./API";
 describe("Path of Exile - Public stash tabs", function () {
     this.timeout(30000);
 
-    /**
-     * API Methods
-     */
     it("#getChunk() - should return public stash tab chunk", async () => {
         await expect(API.getChunk()).to.be.fulfilled;
     });

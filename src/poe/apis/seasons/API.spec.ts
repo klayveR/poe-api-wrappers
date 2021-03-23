@@ -8,9 +8,6 @@ import * as API from "./API";
 describe("Path of Exile - Seasons", function () {
     this.timeout(10000);
 
-    /**
-     * API Methods
-     */
     it("#get() - should return list of seasons", async () => {
         await expect(API.get()).to.be.fulfilled;
     });

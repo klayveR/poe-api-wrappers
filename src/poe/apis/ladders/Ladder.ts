@@ -8,13 +8,13 @@ import { Options } from "./models";
 
 export class Ladder extends Transformable {
     @Exclude()
-    private _options: Options = {
+    protected _options: Options = {
         limit: 20,
         offset: 0,
     };
 
     @Exclude()
-    private _leagueId = "Standard";
+    protected _leagueId = "Standard";
 
     total!: number;
 

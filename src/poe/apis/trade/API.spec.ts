@@ -14,9 +14,6 @@ describe("Path of Exile - Trade", function () {
         sessionId = process.env["POESESSID"] as string;
     });
 
-    /**
-     * API Methods
-     */
     it("#getLeagues() - should return list of trade leagues", async () => {
         await expect(API.getLeagues()).to.be.fulfilled;
     });

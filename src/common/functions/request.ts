@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
+import { stripBOM } from "./stripBOM";
 
 /**
  * @private
@@ -22,12 +23,7 @@ export const request = async (
     };
 
     const response = await axios(config);
-    let data = <string>response.data;
+    const data = <string>response.data;
 
-    // Strip UTF8 BOM
-    if (data.charCodeAt(0) === 0xfeff) {
-        data = data.slice(1);
-    }
-
-    return data;
+    return stripBOM(data);
 };

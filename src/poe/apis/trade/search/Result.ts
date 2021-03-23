@@ -6,10 +6,10 @@ import * as API from "../API";
 
 export class Result extends Transformable {
     @Exclude()
-    private offset = 0;
+    protected offset = 0;
 
     @Exclude()
-    private _sessionId: string | undefined;
+    protected _sessionId: string | undefined;
 
     id!: string;
     complexity!: number | null;
@@ -21,6 +21,11 @@ export class Result extends Transformable {
      */
     @Expose({ name: "result" })
     hashes!: string[];
+
+    @Exclude()
+    public set sessionId(sessionId: string | undefined) {
+        this._sessionId = sessionId;
+    }
 
     /**
      * @remarks
@@ -39,10 +44,5 @@ export class Result extends Transformable {
         this.offset += 10;
 
         return await API.getFromHashes(hashes, this._sessionId);
-    }
-
-    @Exclude()
-    public set sessionId(sessionId: string | undefined) {
-        this._sessionId = sessionId;
     }
 }

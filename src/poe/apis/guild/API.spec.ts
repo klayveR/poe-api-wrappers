@@ -14,9 +14,6 @@ describe("Path of Exile - Guild", function () {
         sessionId = process.env["POESESSID"] as string;
     });
 
-    /**
-     * API Methods
-     */
     it("#get(session) - should return guild the account is in", async () => {
         await expect(API.get(sessionId)).to.be.fulfilled;
     });
