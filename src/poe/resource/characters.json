@@ -1,0 +1,219 @@
+[
+    {
+        "name": "Caithelin",
+        "league": "Standard",
+        "classId": 0,
+        "ascendancyClass": 0,
+        "class": "Scion",
+        "level": 85,
+        "experience": 1291529569
+    },
+    {
+        "name": "klaaayveR",
+        "league": "Standard",
+        "classId": 3,
+        "ascendancyClass": 0,
+        "class": "Witch",
+        "level": 87,
+        "experience": 1521429088
+    },
+    {
+        "name": "klayball",
+        "league": "Standard",
+        "classId": 5,
+        "ascendancyClass": 2,
+        "class": "Hierophant",
+        "level": 94,
+        "experience": 2691648571
+    },
+    {
+        "name": "KlayBolt",
+        "league": "Ritual",
+        "classId": 2,
+        "ascendancyClass": 2,
+        "class": "Deadeye",
+        "level": 95,
+        "experience": 3032143131
+    },
+    {
+        "name": "klayCA",
+        "league": "Standard",
+        "classId": 6,
+        "ascendancyClass": 1,
+        "class": "Assassin",
+        "level": 95,
+        "experience": 3010377699
+    },
+    {
+        "name": "klayFurry",
+        "league": "Standard",
+        "classId": 6,
+        "ascendancyClass": 1,
+        "class": "Assassin",
+        "level": 84,
+        "experience": 1228104724
+    },
+    {
+        "name": "klayGC",
+        "league": "Standard",
+        "classId": 6,
+        "ascendancyClass": 1,
+        "class": "Assassin",
+        "level": 91,
+        "experience": 2096895178
+    },
+    {
+        "name": "klayKB",
+        "league": "Standard",
+        "classId": 2,
+        "ascendancyClass": 2,
+        "class": "Deadeye",
+        "level": 89,
+        "experience": 1795054031
+    },
+    {
+        "name": "klayRage",
+        "league": "Standard",
+        "classId": 3,
+        "ascendancyClass": 3,
+        "class": "Necromancer",
+        "level": 91,
+        "experience": 2094914923
+    },
+    {
+        "name": "klayShaper",
+        "league": "Standard",
+        "classId": 6,
+        "ascendancyClass": 1,
+        "class": "Assassin",
+        "level": 91,
+        "experience": 2097514810
+    },
+    {
+        "name": "klayveR",
+        "league": "Standard",
+        "classId": 5,
+        "ascendancyClass": 0,
+        "class": "Templar",
+        "level": 79,
+        "experience": 786612664
+    },
+    {
+        "name": "klayveRAZZ",
+        "league": "Standard",
+        "classId": 4,
+        "ascendancyClass": 1,
+        "class": "Slayer",
+        "level": 94,
+        "experience": 2662647739
+    },
+    {
+        "name": "klayveREX",
+        "league": "Standard",
+        "classId": 3,
+        "ascendancyClass": 3,
+        "class": "Necromancer",
+        "level": 93,
+        "experience": 2456605363
+    },
+    {
+        "name": "klayveRIP",
+        "league": "Standard",
+        "classId": 4,
+        "ascendancyClass": 1,
+        "class": "Slayer",
+        "level": 82,
+        "experience": 1091513181
+    },
+    {
+        "name": "klayveRIZE",
+        "league": "Standard",
+        "classId": 2,
+        "ascendancyClass": 1,
+        "class": "Raider",
+        "level": 90,
+        "experience": 1976003717
+    },
+    {
+        "name": "Klayverooo",
+        "league": "Standard",
+        "classId": 6,
+        "ascendancyClass": 3,
+        "class": "Saboteur",
+        "level": 94,
+        "experience": 2658074992
+    },
+    {
+        "name": "klayverSWIFT",
+        "league": "Standard",
+        "classId": 5,
+        "ascendancyClass": 1,
+        "class": "Inquisitor",
+        "level": 77,
+        "experience": 708778276
+    },
+    {
+        "name": "Klayxon",
+        "league": "Standard",
+        "classId": 3,
+        "ascendancyClass": 0,
+        "class": "Witch",
+        "level": 83,
+        "experience": 1108577730
+    },
+    {
+        "name": "klayZAPZAP",
+        "league": "Standard",
+        "classId": 6,
+        "ascendancyClass": 1,
+        "class": "Assassin",
+        "level": 94,
+        "experience": 2658074992
+    },
+    {
+        "name": "Klayzzard",
+        "league": "Standard",
+        "classId": 2,
+        "ascendancyClass": 0,
+        "class": "Ranger",
+        "level": 79,
+        "experience": 814250126
+    },
+    {
+        "name": "LootGoblinKlay",
+        "league": "Ritual",
+        "classId": 4,
+        "ascendancyClass": 1,
+        "class": "Slayer",
+        "level": 94,
+        "experience": 2663280992,
+        "lastActive": true
+    },
+    {
+        "name": "PureKlay",
+        "league": "Standard",
+        "classId": 5,
+        "ascendancyClass": 1,
+        "class": "Inquisitor",
+        "level": 90,
+        "experience": 2005024460
+    },
+    {
+        "name": "Siverenthe",
+        "league": "Standard",
+        "classId": 5,
+        "ascendancyClass": 0,
+        "class": "Templar",
+        "level": 88,
+        "experience": 1647029655
+    },
+    {
+        "name": "XenonKlay",
+        "league": "Standard",
+        "classId": 3,
+        "ascendancyClass": 1,
+        "class": "Occultist",
+        "level": 100,
+        "experience": 4250334444
+    }
+]

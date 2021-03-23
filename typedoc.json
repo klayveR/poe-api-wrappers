@@ -1,0 +1,8 @@
+{
+    "entryPoints": ["./src/index.ts"],
+    "exclude": ["**/*+(.spec|.e2e).ts"],
+    "out": "docs",
+    "tsconfig": "tsconfig.json",
+    "excludePrivate": true,
+    "disableSources": true
+}

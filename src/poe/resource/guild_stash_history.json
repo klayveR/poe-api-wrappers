@@ -1,0 +1,418 @@
+{
+    "entries": [
+        {
+            "id": "810998529",
+            "time": 1612727738,
+            "league": "Ritual",
+            "item": "Sol Salvation Battle Lamellar",
+            "action": "removed",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "810998507",
+            "time": 1612727737,
+            "league": "Ritual",
+            "item": "Fate Volley Thicket Bow",
+            "action": "added",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "810998485",
+            "time": 1612727736,
+            "league": "Ritual",
+            "item": "Fate Volley Thicket Bow",
+            "action": "removed",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "810998437",
+            "time": 1612727734,
+            "league": "Ritual",
+            "item": "Doomfletch Royal Bow",
+            "action": "removed",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "804398227",
+            "time": 1612298798,
+            "league": "Ritual",
+            "item": "Belly of the Beast Full Wyrmscale",
+            "action": "removed",
+            "account": {
+                "name": "FiiirsT",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 7 },
+                "twitch": { "name": "yoshirl" }
+            }
+        },
+        {
+            "id": "804371106",
+            "time": 1612297576,
+            "league": "Ritual",
+            "item": "Belly of the Beast Full Wyrmscale",
+            "action": "added",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "804348729",
+            "time": 1612296502,
+            "league": "Ritual",
+            "item": "Spirit Touch Murder Mitts",
+            "action": "removed",
+            "account": {
+                "name": "FiiirsT",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 7 },
+                "twitch": { "name": "yoshirl" }
+            }
+        },
+        {
+            "id": "804346434",
+            "time": 1612296396,
+            "league": "Ritual",
+            "item": "Spirit Touch Murder Mitts",
+            "action": "added",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "802925331",
+            "time": 1612208183,
+            "league": "Ritual",
+            "item": "Sol Salvation Battle Lamellar",
+            "action": "added",
+            "account": {
+                "name": "MichiShoX",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 11 }
+            }
+        },
+        {
+            "id": "800927749",
+            "time": 1612100909,
+            "league": "Ritual",
+            "item": "Cataclysm Circle Iron Ring",
+            "action": "removed",
+            "account": {
+                "name": "FiiirsT",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 7 },
+                "twitch": { "name": "yoshirl" }
+            }
+        },
+        {
+            "id": "792075619",
+            "time": 1611616636,
+            "league": "Ritual",
+            "item": "Precinct Map (T8)",
+            "action": "removed",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "792075584",
+            "time": 1611616635,
+            "league": "Ritual",
+            "item": "Precinct Map (T8)",
+            "action": "added",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "792053125",
+            "time": 1611615640,
+            "league": "Ritual",
+            "item": "Gift to the Goddess",
+            "action": "removed",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "792052935",
+            "time": 1611615632,
+            "league": "Ritual",
+            "item": "Gift to the Goddess",
+            "action": "added",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "792047459",
+            "time": 1611615426,
+            "league": "Ritual",
+            "item": "Tribute to the Goddess",
+            "action": "removed",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "792047419",
+            "time": 1611615424,
+            "league": "Ritual",
+            "item": "Tribute to the Goddess",
+            "action": "added",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791965279",
+            "time": 1611612037,
+            "league": "Ritual",
+            "item": "Chaos Orb",
+            "action": "removed",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791965239",
+            "time": 1611612035,
+            "league": "Ritual",
+            "item": "Divine Orb",
+            "action": "removed",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "791965222",
+            "time": 1611612035,
+            "league": "Ritual",
+            "item": "Chaos Orb",
+            "action": "added",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "791965189",
+            "time": 1611612033,
+            "league": "Ritual",
+            "item": "Divine Orb",
+            "action": "added",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791962955",
+            "time": 1611611933,
+            "league": "Ritual",
+            "item": "Carcass Jack Varnished Coat",
+            "action": "removed",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "791962052",
+            "time": 1611611893,
+            "league": "Ritual",
+            "item": "Carcass Jack Varnished Coat",
+            "action": "added",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791961532",
+            "time": 1611611871,
+            "league": "Ritual",
+            "item": "Carcass Jack Varnished Coat",
+            "action": "removed",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791961037",
+            "time": 1611611852,
+            "league": "Ritual",
+            "item": "Carcass Jack Varnished Coat",
+            "action": "added",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "791914817",
+            "time": 1611610008,
+            "league": "Ritual",
+            "item": "Damnation Loop Diamond Ring",
+            "action": "removed",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "791914783",
+            "time": 1611610007,
+            "league": "Ritual",
+            "item": "Damnation Loop Diamond Ring",
+            "action": "added",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791913625",
+            "time": 1611609959,
+            "league": "Ritual",
+            "item": "Damnation Loop Diamond Ring",
+            "action": "removed",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791901427",
+            "time": 1611609511,
+            "league": "Ritual",
+            "item": "Damnation Loop Diamond Ring",
+            "action": "added",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        },
+        {
+            "id": "791878539",
+            "time": 1611608626,
+            "league": "Ritual",
+            "item": "Exalted Orb",
+            "action": "removed",
+            "account": {
+                "name": "klayveR",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 24 },
+                "twitch": { "name": "klayverize" }
+            }
+        },
+        {
+            "id": "791876949",
+            "time": 1611608559,
+            "league": "Ritual",
+            "item": "Exalted Orb",
+            "action": "added",
+            "account": {
+                "name": "tomyee",
+                "realm": "pc",
+                "guild": { "id": "374", "name": "Devastation", "tag": "DVSTN" },
+                "challenges": { "total": 8 },
+                "twitch": { "name": "tomyee" }
+            }
+        }
+    ],
+    "truncated": false
+}
