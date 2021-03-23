@@ -4,7 +4,7 @@ import { Transformable } from "../../../common/classes";
 import { Realm } from "../../shared/models";
 import { Ladder, Options } from "../ladders";
 import { Rule } from "./Rule";
-import * as API from "../ladders/API";
+import * as Ladders from "../ladders";
 
 export class League extends Transformable {
     id!: string;
@@ -41,7 +41,7 @@ export class League extends Transformable {
      * @throws [[APIError]]
      */
     public async getLadder(options?: Options, store = true): Promise<Ladder> {
-        const ladder = await API.get(this.id, options);
+        const ladder = await Ladders.get(this.id, options);
 
         if (store) {
             this.ladder = ladder;
