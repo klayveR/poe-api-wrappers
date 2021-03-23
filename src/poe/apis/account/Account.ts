@@ -9,7 +9,7 @@ import { Challenges } from "./models";
 export class Account {
     name!: string;
     realm!: Realm;
-    challenges!: Challenges;
+    challenges?: Challenges;
 
     @Type(/* istanbul ignore next */ () => Stream)
     twitch?: Stream;
