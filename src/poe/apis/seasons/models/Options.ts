@@ -14,4 +14,11 @@ export interface PlayerHistoryOptions extends RealmOptions {
      * Default: `5`
      */
     perPage?: number;
+
+    /**
+     * If `true`, get only pvp seasons
+     *
+     * Default: `false`
+     */
+    pvp?: boolean;
 }
