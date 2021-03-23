@@ -30,7 +30,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "repository": "git://github.com/klayveR/poe-api-wrappers-test.git",
+    "repository": "git://github.com/klayveR/poe-api-wrappers.git",
     "license": "MIT",
     "devDependencies": {
         "@istanbuljs/nyc-config-typescript": "^1.0.1",
