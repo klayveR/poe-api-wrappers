@@ -78,7 +78,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Collection</span>
+						<span class="tsd-signature-type">Transformable</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Collection</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -86,10 +91,10 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="pathofexile.trade.ignore.collection.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.trade.ignore.collection.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -99,20 +104,27 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathofexile.trade.ignore.collection.html#pagination" class="tsd-kind-icon">pagination</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.trade.ignore.collection.html#toplain" class="tsd-kind-icon">to<wbr>Plain</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Collection<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pathofexile.trade.ignore.collection.html" class="tsd-signature-type" data-tsd-kind="Class">Collection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from Transformable.constructor</p>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="pathofexile.trade.ignore.collection.html" class="tsd-signature-type" data-tsd-kind="Class">Collection</a></h4>
 						</li>
@@ -141,6 +153,36 @@
 					<div class="tsd-signature tsd-kind-icon">pagination<span class="tsd-signature-symbol">:</span> <a href="../interfaces/pathofexile.trade.ignore.pagination.html" class="tsd-signature-type" data-tsd-kind="Interface">Pagination</a></div>
 					<aside class="tsd-sources">
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toplain" class="tsd-anchor"></a>
+					<h3>to<wbr>Plain</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Plain<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from Transformable.toPlain</p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts this class back into a plain javascript object.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Property keys which have been renamed during the initial transformation to a class object will
+											be reverted to the original keys. For example, the <code>cachedSince</code> property in the <a href="pathofexile.ladders.ladder.html">Ladder</a>
+										class will be reverted to the original API property, <code>cached_since</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">unknown</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -226,7 +268,7 @@
 					<li class="current tsd-kind-class tsd-parent-kind-namespace">
 						<a href="pathofexile.trade.ignore.collection.html" class="tsd-kind-icon">Collection</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.trade.ignore.collection.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -234,6 +276,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="pathofexile.trade.ignore.collection.html#pagination" class="tsd-kind-icon">pagination</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="pathofexile.trade.ignore.collection.html#toplain" class="tsd-kind-icon">to<wbr>Plain</a>
 							</li>
 						</ul>
 					</li>
@@ -255,7 +300,10 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>

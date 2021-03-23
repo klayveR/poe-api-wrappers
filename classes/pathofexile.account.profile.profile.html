@@ -100,20 +100,19 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathofexile.account.profile.profile.html#avatarurl" class="tsd-kind-icon">avatar<wbr>Url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathofexile.account.profile.profile.html#badges" class="tsd-kind-icon">badges</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#challenges" class="tsd-kind-icon">challenges</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#guild" class="tsd-kind-icon">guild</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathofexile.account.profile.profile.html#messages" class="tsd-kind-icon">messages</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#realm" class="tsd-kind-icon">realm</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#twitch" class="tsd-kind-icon">twitch</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathofexile.account.profile.profile.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#getcharacters" class="tsd-kind-icon">get<wbr>Characters</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.account.profile.profile.html#toplain" class="tsd-kind-icon">to<wbr>Plain</a></li>
 							</ul>
 						</section>
 					</div>
@@ -139,30 +138,9 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="avatarurl" class="tsd-anchor"></a>
-					<h3>avatar<wbr>Url</h3>
-					<div class="tsd-signature tsd-kind-icon">avatar<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>overrides</dt>
-							<dd><p><code>avatar_url</code></p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="badges" class="tsd-anchor"></a>
-					<h3>badges</h3>
-					<div class="tsd-signature tsd-kind-icon">badges<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span></div>
-					<aside class="tsd-sources">
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="challenges" class="tsd-anchor"></a>
-					<h3>challenges</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> challenges</h3>
 					<div class="tsd-signature tsd-kind-icon">challenges<span class="tsd-signature-symbol">:</span> <a href="../interfaces/pathofexile.account.challenges.html" class="tsd-signature-type" data-tsd-kind="Interface">Challenges</a></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="pathofexile.account.account.html">Account</a>.<a href="pathofexile.account.account.html#challenges">challenges</a></p>
@@ -174,13 +152,6 @@
 					<div class="tsd-signature tsd-kind-icon">guild<span class="tsd-signature-symbol">:</span> <a href="pathofexile.guild.guild.html" class="tsd-signature-type" data-tsd-kind="Class">Guild</a></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="pathofexile.account.account.html">Account</a>.<a href="pathofexile.account.account.html#guild">guild</a></p>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="messages" class="tsd-anchor"></a>
-					<h3>messages</h3>
-					<div class="tsd-signature tsd-kind-icon">messages<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -205,6 +176,13 @@
 					<div class="tsd-signature tsd-kind-icon">twitch<span class="tsd-signature-symbol">:</span> <a href="pathofexile.streams.stream.html" class="tsd-signature-type" data-tsd-kind="Class">Stream</a></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="pathofexile.account.account.html">Account</a>.<a href="pathofexile.account.account.html#twitch">twitch</a></p>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="uuid" class="tsd-anchor"></a>
+					<h3>uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
 					</aside>
 				</section>
 			</section>
@@ -239,6 +217,33 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="pathofexile.characters.character.html" class="tsd-signature-type" data-tsd-kind="Class">Character</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A list of characters from this account</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toplain" class="tsd-anchor"></a>
+					<h3>to<wbr>Plain</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Plain<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="pathofexile.account.account.html">Account</a>.<a href="pathofexile.account.account.html#toplain">toPlain</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts this class back into a plain javascript object.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Property keys which have been renamed during the initial transformation to a class object will
+											be reverted to the original keys. For example, the <code>cachedSince</code> property in the <a href="pathofexile.ladders.ladder.html">Ladder</a>
+										class will be reverted to the original API property, <code>cached_since</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">unknown</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -323,20 +328,11 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.account.profile.profile.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="pathofexile.account.profile.profile.html#avatarurl" class="tsd-kind-icon">avatar<wbr>Url</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="pathofexile.account.profile.profile.html#badges" class="tsd-kind-icon">badges</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.account.profile.profile.html#challenges" class="tsd-kind-icon">challenges</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.account.profile.profile.html#guild" class="tsd-kind-icon">guild</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="pathofexile.account.profile.profile.html#messages" class="tsd-kind-icon">messages</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.account.profile.profile.html#name" class="tsd-kind-icon">name</a>
@@ -347,8 +343,14 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.account.profile.profile.html#twitch" class="tsd-kind-icon">twitch</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pathofexile.account.profile.profile.html#uuid" class="tsd-kind-icon">uuid</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.account.profile.profile.html#getcharacters" class="tsd-kind-icon">get<wbr>Characters</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="pathofexile.account.profile.profile.html#toplain" class="tsd-kind-icon">to<wbr>Plain</a>
 							</li>
 						</ul>
 					</li>
