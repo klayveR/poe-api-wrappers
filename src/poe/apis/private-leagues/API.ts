@@ -12,7 +12,7 @@ import { MembersOptions } from "./models";
  * @endpoint https://api.pathofexile.com/private-league-member/id
  * @param id ID of the private league without `PL` prefix
  * @param options
- * @throws [[APIException]]
+ * @throws [[APIError]]
  */
 export const getMembers = async (id: number, options?: MembersOptions): Promise<Collection> => {
     const url = buildURL(

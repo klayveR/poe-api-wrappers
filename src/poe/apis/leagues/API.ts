@@ -40,7 +40,7 @@ export const getById = async (id: string, options?: LeagueOptions): Promise<Leag
 
 /**
  * @endpoint http://api.pathofexile.com/league-rules
- * @throws [[APIException]]
+ * @throws [[APIError]]
  */
 export const getRules = async (): Promise<Rule[]> => {
     const url = buildURL(`http://api.pathofexile.com/league-rules`);
@@ -50,7 +50,7 @@ export const getRules = async (): Promise<Rule[]> => {
 /**
  * @endpoint http://api.pathofexile.com/league-rules/id
  * @param id
- * @throws [[APIException]]
+ * @throws [[APIError]]
  */
 export const getRuleById = async (id: string): Promise<Rule> => {
     const url = buildURL(`http://api.pathofexile.com/league-rules/${id}`);
