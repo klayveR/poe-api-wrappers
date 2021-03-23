@@ -1,15 +1,16 @@
 import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
-import { PlayerHistoryOptions } from "./models";
+import { PlayerHistoryOptions, SeasonOptions } from "./models";
 import { PlayerHistory } from "./PlayerHistory";
 import { Season } from "./Season";
 
 /**
  * @endpoint https://api.pathofexile.com/seasons
+ * @param options
  * @returns A list of all seasons
  * @throws [[APIError]]
  */
-export const get = async (): Promise<Season[]> => {
-    const url = new URL(`https://api.pathofexile.com/seasons`);
+export const get = async (options?: SeasonOptions): Promise<Season[]> => {
+    const url = buildURL(`https://api.pathofexile.com/seasons`, options);
     return await requestTransformedArray(Season, url);
 };
 

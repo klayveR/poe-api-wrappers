@@ -1,5 +1,14 @@
 import { RealmOptions } from "../../../shared/models";
 
+export interface SeasonOptions {
+    /**
+     * If `true`, get only pvp seasons
+     *
+     * Default: `false`
+     */
+    pvp?: boolean;
+}
+
 export interface PlayerHistoryOptions extends RealmOptions {
     /**
      * Page offset
@@ -14,11 +23,4 @@ export interface PlayerHistoryOptions extends RealmOptions {
      * Default: `5`
      */
     perPage?: number;
-
-    /**
-     * If `true`, get only pvp seasons
-     *
-     * Default: `false`
-     */
-    pvp?: boolean;
 }

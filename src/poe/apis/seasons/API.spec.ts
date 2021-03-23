@@ -12,6 +12,10 @@ describe("Path of Exile - Seasons", function () {
         await expect(API.get()).to.be.fulfilled;
     });
 
+    it("#get(options) - should return list of pvp seasons", async () => {
+        await expect(API.get({ pvp: true })).to.be.fulfilled;
+    });
+
     it("#getPlayerHistory(id, account) - should return season player history", async () => {
         await expect(API.getPlayerHistory("Race Season One", "Chris")).to.be.fulfilled;
     });
