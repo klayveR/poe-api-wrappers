@@ -1,8 +1,9 @@
 import { Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
 import { Reward } from "./Reward";
 
-export class Season {
+export class Season extends Transformable {
     id!: string;
     htmlId!: string;
     htmlContent!: string | null;

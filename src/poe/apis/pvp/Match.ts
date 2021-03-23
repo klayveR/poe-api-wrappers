@@ -1,8 +1,9 @@
 import { Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
 import { Realm } from "../../shared/models";
 
-export class Match {
+export class Match extends Transformable {
     id!: string;
     realm!: Realm;
     url!: string;

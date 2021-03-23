@@ -1,9 +1,10 @@
 import { Expose, Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
 import * as API from "./API";
 import { Stash } from "./Stash";
 
-export class Chunk {
+export class Chunk extends Transformable {
     /**
      * @overrides `next_change_id`
      */

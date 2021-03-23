@@ -1,4 +1,5 @@
 import { Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
 import { Realm, RealmOptions } from "../../shared/models";
 import * as Characters from "../characters";
@@ -6,7 +7,7 @@ import { Guild } from "../guild";
 import { Stream } from "../streams";
 import { Challenges } from "./models";
 
-export class Account {
+export class Account extends Transformable {
     name!: string;
     realm!: Realm;
     challenges?: Challenges;

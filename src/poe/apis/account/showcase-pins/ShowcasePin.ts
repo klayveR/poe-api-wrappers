@@ -1,6 +1,7 @@
 import { Expose } from "class-transformer";
+import { Transformable } from "../../../../common/classes";
 
-export class ShowcasePin {
+export class ShowcasePin extends Transformable {
     /**
      * @overrides `character_id`
      */

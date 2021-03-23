@@ -1,10 +1,11 @@
 import { Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
 import { Realm } from "../../shared/models";
 import { Ladder } from "../ladders";
 import { Rule } from "./Rule";
 
-export class League {
+export class League extends Transformable {
     id!: string;
     realm!: Realm;
     url!: string;

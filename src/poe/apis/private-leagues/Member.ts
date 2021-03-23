@@ -1,4 +1,6 @@
-export class Member {
+import { Transformable } from "../../../common/classes";
+
+export class Member extends Transformable {
     id!: number;
     memberName!: string;
     role!: string;

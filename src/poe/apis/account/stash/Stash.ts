@@ -1,4 +1,5 @@
 import { Type } from "class-transformer";
+import { Transformable } from "../../../../common/classes";
 
 import { Item } from "../../../shared/item";
 import { DivinationLayout, Layout, Tab } from "./models";
@@ -6,7 +7,7 @@ import { DivinationLayout, Layout, Tab } from "./models";
 /**
  * @todo Add remaining stash layouts
  */
-export class Stash {
+export class Stash extends Transformable {
     numTabs!: number;
     quadLayout?: boolean;
     essenceLayout?: { [key: string]: Layout };

@@ -1,9 +1,10 @@
 import { Exclude, Expose } from "class-transformer";
+import { Transformable } from "../../../../common/classes";
 
 import { Fetch } from "../";
 import * as API from "../API";
 
-export class Result {
+export class Result extends Transformable {
     @Exclude()
     private offset = 0;
 

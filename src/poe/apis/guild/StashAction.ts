@@ -1,8 +1,9 @@
 import { Transform, Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
 import { Account } from "../account";
 
-export class StashAction {
+export class StashAction extends Transformable {
     id!: string;
     league!: string;
     item!: string;

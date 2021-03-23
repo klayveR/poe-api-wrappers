@@ -1,9 +1,10 @@
+import { Transformable } from "../../../common/classes";
 import { AdditionalProperty, Extended, Hybrid, Property } from "./models";
 
 /***
  * @hidden
  */
-export class ItemBase {
+export class ItemBase extends Transformable {
     verified!: boolean;
     w!: number;
     h!: number;

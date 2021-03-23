@@ -1,6 +1,7 @@
 import { Type } from "class-transformer";
+import { Transformable } from "../../../common/classes";
 
-export class Guild {
+export class Guild extends Transformable {
     id!: string;
     name!: string;
     tag!: string;
