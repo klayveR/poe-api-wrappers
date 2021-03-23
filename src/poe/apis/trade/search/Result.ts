@@ -6,10 +6,10 @@ import * as API from "../API";
 
 export class Result extends Transformable {
     @Exclude()
-    protected offset = 0;
+    private offset = 0;
 
     @Exclude()
-    protected _sessionId: string | undefined;
+    private _sessionId: string | undefined;
 
     id!: string;
     complexity!: number | null;
