@@ -1,5 +1,5 @@
 import { Transformable } from "../../../common/classes";
-import { SparkLine } from "../../shared/models";
+import { Sparkline } from "../../shared/models";
 import { Modifier } from "./models/Modifier";
 import { TradeInfo } from "./models/TradeInfo";
 
@@ -16,8 +16,8 @@ export class Item extends Transformable {
     artFilename!: null | string;
     links!: number;
     itemClass!: number;
-    sparkline!: SparkLine;
-    lowConfidenceSparkline!: SparkLine;
+    sparkline!: Sparkline;
+    lowConfidenceSparkline!: Sparkline;
     implicitModifiers!: Modifier[];
     explicitModifiers!: Modifier[];
     flavourText!: null | string;
