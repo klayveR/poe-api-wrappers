@@ -21,6 +21,6 @@ export class Member extends Transformable {
      * @throws [[APIError]]
      */
     public async getCharacters(options?: RealmOptions): Promise<Characters.Character[]> {
-        return await Characters.get(this.memberName, undefined, options);
+        return await Characters.get(this.memberName, options);
     }
 }

@@ -1,12 +1,11 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
 import { plainToClass } from "class-transformer";
+import { Settings } from "../../poe";
 
 import { APIError, ExternalAPIError } from "../../poe/errors";
-import { RequestOptions } from "../models";
 
 export const request = async (
     url: URL,
-    reqSettings: RequestOptions = {},
     method: Method = "get",
     payload: unknown = {}
 ): Promise<string> => {
@@ -14,7 +13,7 @@ export const request = async (
         const config: AxiosRequestConfig = {
             url: url.toString(),
             method: method,
-            headers: buildHeaders(reqSettings),
+            headers: buildHeaders(url),
             data: payload,
             transformResponse: [
                 (data: string): string => {
@@ -29,7 +28,7 @@ export const request = async (
         return stripByteOrderMark(data);
     } catch (error: unknown) {
         if (axios.isAxiosError(error) && error.response) {
-            if (url.host === "pathofexile.com" || url.host === "api.pathofexile.com") {
+            if (url.host.includes("pathofexile.com")) {
                 const data = <ExternalAPIError>JSON.parse(error.response.data);
                 throw new APIError(data);
             }
@@ -42,11 +41,10 @@ export const request = async (
 export const requestTransformed = async <T>(
     cls: new () => T,
     url: URL,
-    reqSettings: RequestOptions = {},
     method: Method = "get",
     payload: unknown = {}
 ): Promise<T> => {
-    const response = await request(url, reqSettings, method, payload);
+    const response = await request(url, method, payload);
     const obj = <T>JSON.parse(response);
 
     return plainToClass(cls, obj);
@@ -55,25 +53,26 @@ export const requestTransformed = async <T>(
 export const requestTransformedArray = async <T>(
     cls: new () => T,
     url: URL,
-    reqSettings: RequestOptions = {},
     method: Method = "get",
     payload: unknown = {}
 ): Promise<T[]> => {
-    const response = await request(url, reqSettings, method, payload);
+    const response = await request(url, method, payload);
     const obj = <T[]>JSON.parse(response);
 
     return plainToClass(cls, obj);
 };
 
-export const buildHeaders = (reqSettings: RequestOptions): Record<string, string> => {
+export const buildHeaders = (url: URL): Record<string, string> => {
     const headers: Record<string, string> = {};
 
-    if (reqSettings.sessionId != null) {
-        headers["Cookie"] = `POESESSID=${reqSettings.sessionId}`;
-    }
+    if (url.host.includes("pathofexile.com")) {
+        if (Settings.sessionId != null) {
+            headers["Cookie"] = `POESESSID=${Settings.sessionId}`;
+        }
 
-    if (reqSettings.userAgent != null) {
-        headers["User-Agent"] = reqSettings.userAgent;
+        if (Settings.userAgent != null) {
+            headers["User-Agent"] = Settings.userAgent;
+        }
     }
 
     return headers;

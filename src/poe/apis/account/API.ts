@@ -1,5 +1,4 @@
 import { buildURL, requestTransformed } from "../../../common/functions";
-import { Settings } from "../../Settings";
 import * as Avatars from "./avatars";
 import { AvatarsOptions, ShowcasePinOptions, StashOptions } from "./models";
 import * as MTX from "./mtx";
@@ -9,36 +8,34 @@ import * as ShowcasePins from "./showcase-pins";
 import { Stash } from "./stash";
 
 /**
+ * @remarks
+ * Requires [[Settings.sessionId]] to be set.
+ *
  * @endpoint https://api.pathofexile.com/profile
- * @param sessionId
  * @throws [[APIError]]
  */
-export const getProfile = async (sessionId: string): Promise<Profile> => {
+export const getProfile = async (): Promise<Profile> => {
     const url = new URL(`https://api.pathofexile.com/profile`);
 
-    return await requestTransformed(Profile, url, { sessionId, userAgent: Settings.userAgent });
+    return await requestTransformed(Profile, url);
 };
 
 /**
+ * @remarks
+ * Requires [[Settings.sessionId]] to be set.
+ *
  * @endpoint https://api.pathofexile.com/account-avatar
- * @param sessionId
  * @param options
  * @throws [[APIError]]
  */
-export const getAvatars = async (
-    sessionId: string,
-    options?: AvatarsOptions
-): Promise<Avatars.Collection> => {
+export const getAvatars = async (options?: AvatarsOptions): Promise<Avatars.Collection> => {
     const url = buildURL(`https://api.pathofexile.com/account-avatar`, options, {
         page: 1,
         perPage: 16,
         custom: false,
     });
 
-    const collection = await requestTransformed(Avatars.Collection, url, {
-        sessionId,
-        userAgent: Settings.userAgent,
-    });
+    const collection = await requestTransformed(Avatars.Collection, url);
 
     if (options) {
         collection.options = options;
@@ -64,17 +61,17 @@ export const getShowcasePins = async (
         account: accountName,
     });
 
-    return await requestTransformed(ShowcasePins.Collection, url, {
-        userAgent: Settings.userAgent,
-    });
+    return await requestTransformed(ShowcasePins.Collection, url);
 };
 
 /**
+ * @remarks
+ * Requires [[Settings.sessionId]] to be set.
+ *
  * @endpoint https://api.pathofexile.com/character-window/get-stash-items
  * @param accountName
  * @param league
  * @param tabIndex
- * @param sessionId
  * @param options
  * @throws [[APIError]]
  */
@@ -82,7 +79,6 @@ export const getStash = async (
     accountName: string,
     league: string,
     tabIndex: number,
-    sessionId?: string,
     options?: StashOptions
 ): Promise<Stash> => {
     const url = buildURL(
@@ -92,7 +88,7 @@ export const getStash = async (
         { accountName, league, tabIndex: tabIndex.toString() }
     );
 
-    return await requestTransformed(Stash, url, { sessionId, userAgent: Settings.userAgent });
+    return await requestTransformed(Stash, url);
 };
 
 /**
@@ -108,20 +104,21 @@ export const getNameByCharacter = async (characterName: string): Promise<string>
         { character: characterName }
     );
 
-    const account = await requestTransformed(Name, url, { userAgent: Settings.userAgent });
+    const account = await requestTransformed(Name, url);
     return account.name;
 };
 
 /**
+ * @remarks
+ * Requires [[Settings.sessionId]] to be set.
+ *
  * @endpoint https://api.pathofexile.com/character-window/get-mtx-stash-items
  * @param accountName
- * @param sessionId
  * @param options
  * @throws [[APIError]]
  */
 export const getMicrotransactions = async (
     accountName: string,
-    sessionId: string,
     sortOrder: "category" | "theme" = "category"
 ): Promise<MTX.Group[]> => {
     const url = buildURL(`https://api.pathofexile.com/character-window/get-mtx-stash-items`);
@@ -130,12 +127,6 @@ export const getMicrotransactions = async (
         sortOrder,
     };
 
-    const response = await requestTransformed(
-        MTX.Response,
-        url,
-        { sessionId, userAgent: Settings.userAgent },
-        "post",
-        payload
-    );
+    const response = await requestTransformed(MTX.Response, url, "post", payload);
     return response.groups;
 };

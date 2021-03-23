@@ -1,5 +1,4 @@
 import { requestTransformed } from "../../../common/functions";
-import { Settings } from "../../Settings";
 import { Response } from "./Response";
 import { Stream } from "./Stream";
 
@@ -10,6 +9,6 @@ import { Stream } from "./Stream";
  */
 export const get = async (): Promise<Stream[]> => {
     const url = new URL(`https://api.pathofexile.com/streams`);
-    const response = await requestTransformed(Response, url, { userAgent: Settings.userAgent });
+    const response = await requestTransformed(Response, url);
     return response.streams;
 };

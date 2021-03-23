@@ -1,5 +1,4 @@
 import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
-import { Settings } from "../../Settings";
 import { League } from "./League";
 import { LeagueOptions, ListOptions } from "./models";
 import { Rule } from "./Rule";
@@ -18,7 +17,7 @@ import { Rule } from "./Rule";
  */
 export const get = async (options?: ListOptions): Promise<League[]> => {
     const url = buildURL(`https://api.pathofexile.com/leagues`, options);
-    return await requestTransformedArray(League, url, { userAgent: Settings.userAgent });
+    return await requestTransformedArray(League, url);
 };
 
 /**
@@ -36,24 +35,24 @@ export const get = async (options?: ListOptions): Promise<League[]> => {
  */
 export const getById = async (id: string, options?: LeagueOptions): Promise<League> => {
     const url = buildURL(`https://api.pathofexile.com/leagues/${id}`, options);
-    return await requestTransformed(League, url, { userAgent: Settings.userAgent });
+    return await requestTransformed(League, url);
 };
 
 /**
  * @endpoint http://api.pathofexile.com/league-rules
- * @throws [[APIException]]
+ * @throws [[APIError]]
  */
 export const getRules = async (): Promise<Rule[]> => {
     const url = buildURL(`http://api.pathofexile.com/league-rules`);
-    return await requestTransformedArray(Rule, url, { userAgent: Settings.userAgent });
+    return await requestTransformedArray(Rule, url);
 };
 
 /**
  * @endpoint http://api.pathofexile.com/league-rules/id
  * @param id
- * @throws [[APIException]]
+ * @throws [[APIError]]
  */
 export const getRuleById = async (id: string): Promise<Rule> => {
     const url = buildURL(`http://api.pathofexile.com/league-rules/${id}`);
-    return await requestTransformed(Rule, url, { userAgent: Settings.userAgent });
+    return await requestTransformed(Rule, url);
 };

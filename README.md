@@ -26,15 +26,25 @@ Please refer to [CONTRIBUTING.md](https://github.com/klayveR/poe-api-wrappers/bl
 
 > ⚠️ The following examples do not handle errors to keep it simple. You should wrap your calls in a try/catch block or do whatever you do to catch errors (see [Handling errors](#handling-errors)). Also, keep in mind that many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.
 
-Before making requests to the official API, you should set your user agent, as requested by GGG [here](https://www.pathofexile.com/forum/view-thread/3019033/page/1#p23790007).
+### Setup
 
 ```typescript
 import { PathOfExile } from "@klayver/poe-api-wrappers";
+```
 
+Before making requests to the official API, you should set your user agent, as requested by GGG [here](https://www.pathofexile.com/forum/view-thread/3019033/page/1#p23790007).
+
+```typescript
 PathOfExile.Settings.userAgent = "my-awesome-tool-name, contact@me.com";
 ```
 
-**Get 10 public stash tab chunks and do something with them**
+You can also define a session ID, which will be used in every request you make. Some endpoints require the session ID to be defined (see documentation).
+
+```typescript
+PathOfExile.Settings.sessionId = "y0uRs3ss10n1dh3r3";
+```
+
+### Get 10 public stash tab chunks and do something with them
 
 ```typescript
 let chunk = await PathOfExile.PublicStashTabs.getChunk();
@@ -45,7 +55,7 @@ for (let i = 0; i < 9; i++) {
 }
 ```
 
-**Get the entire Standard league ladder and filter it by online players**
+### Get the entire Standard league ladder and filter it by online players
 
 ```typescript
 // Get the ladder with the first 200 entries
@@ -61,7 +71,7 @@ const online = ladder.filterBy("online", true);
 console.log(`${online.length}/${ladder.total} players are currently online.`);
 ```
 
-**Execute a search query and get the prices for the first 10 results**
+### Execute a search query and get the prices for the first 10 results
 
 ```typescript
 const query = {
@@ -90,7 +100,7 @@ Requests to the Path of Exile API throw custom errors when something goes wrong.
 
 ```typescript
 try {
-    await PathOfExile.Account.getAvatars("invalid");
+    await PathOfExile.Account.getProfile();
 } catch (error: unknown) {
     if (error instanceof PathOfExile.APIError) {
         console.log(`Request failed with code ${error.code}: ${error.message}`);

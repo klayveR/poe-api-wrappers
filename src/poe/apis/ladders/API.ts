@@ -1,5 +1,4 @@
 import { buildURL, requestTransformed } from "../../../common/functions";
-import { Settings } from "../../Settings";
 import { Ladder } from "./Ladder";
 import { Options } from "./models";
 
@@ -21,7 +20,7 @@ import { Options } from "./models";
  */
 export const get = async (id: string, options?: Options): Promise<Ladder> => {
     const url = buildURL(`https://api.pathofexile.com/ladders/${id}`, options);
-    const ladder = await requestTransformed(Ladder, url, { userAgent: Settings.userAgent });
+    const ladder = await requestTransformed(Ladder, url);
     ladder.leagueId = id;
 
     if (options) {
