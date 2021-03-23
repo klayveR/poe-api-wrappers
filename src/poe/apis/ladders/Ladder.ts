@@ -1,6 +1,6 @@
 import { Exclude, Expose, Type } from "class-transformer";
-import { Transformable } from "../../../common/classes";
 
+import { Transformable } from "../../../common/classes";
 import { Character } from "../characters";
 import * as API from "./API";
 import { Entry } from "./Entry";

@@ -1,6 +1,6 @@
 import { Expose } from "class-transformer";
-import { Transformable } from "../../../../common/classes";
 
+import { Transformable } from "../../../../common/classes";
 import { Account } from "./models/Account";
 import { Pagination } from "./models/Pagination";
 

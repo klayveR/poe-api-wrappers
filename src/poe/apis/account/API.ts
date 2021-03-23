@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import * as Avatars from "./avatars";
 import { AvatarsOptions, ShowcasePinOptions, StashOptions } from "./models";
 import * as MTX from "./mtx";

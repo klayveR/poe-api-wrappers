@@ -1,6 +1,6 @@
 import { Transform, Type } from "class-transformer";
-import { Transformable } from "../../../common/classes";
 
+import { Transformable } from "../../../common/classes";
 import { Account } from "../account";
 
 export class StashAction extends Transformable {

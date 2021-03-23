@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { PlayerHistoryOptions } from "./models";
 import { PlayerHistory } from "./PlayerHistory";
 import { Season } from "./Season";

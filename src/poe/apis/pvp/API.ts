@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformedArray } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { Match } from "./Match";
 import { MatchOptions } from "./models";
 

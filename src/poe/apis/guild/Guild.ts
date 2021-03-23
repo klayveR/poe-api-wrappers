@@ -1,4 +1,5 @@
 import { Type } from "class-transformer";
+
 import { Transformable } from "../../../common/classes";
 
 export class Guild extends Transformable {

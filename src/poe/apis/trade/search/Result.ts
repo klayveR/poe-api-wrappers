@@ -1,7 +1,7 @@
 import { Exclude, Expose } from "class-transformer";
-import { Transformable } from "../../../../common/classes";
 
 import { Fetch } from "../";
+import { Transformable } from "../../../../common/classes";
 import * as API from "../API";
 
 export class Result extends Transformable {

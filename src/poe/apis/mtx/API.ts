@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { Collection } from "./Collection";
 import { SpecialsOptions } from "./models";
 

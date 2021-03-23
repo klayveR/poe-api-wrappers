@@ -1,6 +1,6 @@
 import { Type } from "class-transformer";
-import { Transformable } from "../../../../common/classes";
 
+import { Transformable } from "../../../../common/classes";
 import { Item } from "../../../shared/item";
 import { DivinationLayout, Layout, Tab } from "./models";
 

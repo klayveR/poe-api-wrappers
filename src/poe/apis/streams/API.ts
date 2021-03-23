@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { Response } from "./Response";
 import { Stream } from "./Stream";
 

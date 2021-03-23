@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
 import { plainToClass } from "class-transformer";
+
 import { APIError, ExternalAPIError } from "../../poe/errors";
 import { RequestOptions } from "../models";
 

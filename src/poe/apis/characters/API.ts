@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { RealmOptions } from "../../shared/models";
 import { Character } from "./Character";
 import { Items } from "./Items";

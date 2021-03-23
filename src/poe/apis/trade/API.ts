@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import * as Fetch from "./fetch";
 import * as Ignore from "./ignore";
 import * as Items from "./items";

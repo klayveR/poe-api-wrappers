@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { Guild } from "./Guild";
 import { StashHistoryOptions } from "./models";
 import { PointTransactions } from "./PointTransactions";

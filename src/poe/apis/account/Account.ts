@@ -1,6 +1,6 @@
 import { Type } from "class-transformer";
-import { Transformable } from "../../../common/classes";
 
+import { Transformable } from "../../../common/classes";
 import { Realm, RealmOptions } from "../../shared/models";
 import * as Characters from "../characters";
 import { Guild } from "../guild";

@@ -1,5 +1,5 @@
-import { Settings } from "../../Settings";
 import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { League } from "./League";
 import { LeagueOptions, ListOptions } from "./models";
 import { Rule } from "./Rule";

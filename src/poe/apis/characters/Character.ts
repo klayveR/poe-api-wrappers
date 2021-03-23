@@ -1,5 +1,4 @@
 import { Transformable } from "../../../common/classes";
-
 import { Experience } from "../../shared/constants";
 import { Depth } from "./models";
 

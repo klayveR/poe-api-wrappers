@@ -1,6 +1,6 @@
 import { Type } from "class-transformer";
-import { Transformable } from "../../../common/classes";
 
+import { Transformable } from "../../../common/classes";
 import { Reward } from "./Reward";
 
 export class Season extends Transformable {

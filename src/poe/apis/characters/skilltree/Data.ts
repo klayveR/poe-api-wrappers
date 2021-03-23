@@ -1,6 +1,6 @@
 import { Expose, Type } from "class-transformer";
-import { Transformable } from "../../../../common/classes";
 
+import { Transformable } from "../../../../common/classes";
 import { Class } from "./Class";
 import { Constants, ExtraImage, Group, Node, SkillSprites } from "./models";
 

@@ -1,6 +1,6 @@
 import { Expose } from "class-transformer";
-import { Transformable } from "../../../../common/classes";
 
+import { Transformable } from "../../../../common/classes";
 import { Ascendancy } from "./models";
 
 export class Class extends Transformable {

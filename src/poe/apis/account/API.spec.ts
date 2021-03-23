@@ -3,8 +3,8 @@ import "mocha";
 
 import { expect } from "chai";
 
-import * as API from "./API";
 import { APIError } from "../../errors";
+import * as API from "./API";
 
 describe("Path of Exile - Accounts", function () {
     this.timeout(10000);

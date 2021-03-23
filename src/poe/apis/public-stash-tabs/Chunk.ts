@@ -1,6 +1,6 @@
 import { Expose, Type } from "class-transformer";
-import { Transformable } from "../../../common/classes";
 
+import { Transformable } from "../../../common/classes";
 import * as API from "./API";
 import { Stash } from "./Stash";
 
