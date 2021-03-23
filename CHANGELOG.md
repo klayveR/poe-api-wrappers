@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/klayveR/poe-api-wrappers/compare/v2.0.0...v2.0.1) (2021-03-23)
+
+
+### Bug Fixes
+
+* fix getting pvp seasons ([79a60a8](https://github.com/klayveR/poe-api-wrappers/commit/79a60a8b5d73389b4047b4cdeb69794cc0cadfc3))
+
 # [2.0.0](https://github.com/klayveR/poe-api-wrappers/compare/v1.1.0...v2.0.0) (2021-03-23)
 
 
