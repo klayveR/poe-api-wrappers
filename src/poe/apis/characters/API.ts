@@ -1,23 +1,20 @@
 import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
-import { Settings } from "../../Settings";
 import { RealmOptions } from "../../shared/models";
 import { Character } from "./Character";
 import { Items } from "./Items";
 import { PassiveSkills } from "./PassiveSkills";
 
 /**
+ * @remarks
+ * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
+ *
  * @endpoint https://api.pathofexile.com/character-window/get-characters
  * @param accountName
- * @param sessionId Necessary if profile or character tab is private
  * @param options
  * @returns A list of characters of an account
  * @throws [[APIError]]
  */
-export const get = async (
-    accountName: string,
-    sessionId?: string,
-    options?: RealmOptions
-): Promise<Character[]> => {
+export const get = async (accountName: string, options?: RealmOptions): Promise<Character[]> => {
     const url = buildURL(
         `https://api.pathofexile.com/character-window/get-characters`,
         options,
@@ -25,24 +22,22 @@ export const get = async (
         { accountName }
     );
 
-    return await requestTransformedArray(Character, url, {
-        sessionId,
-        userAgent: Settings.userAgent,
-    });
+    return await requestTransformedArray(Character, url);
 };
 
 /**
+ * @remarks
+ * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
+ *
  * @endpoint https://api.pathofexile.com/character-window/get-items
  * @param accountName
  * @param character
- * @param sessionId Necessary if profile or character tab is private
  * @param options
  * @throws [[APIError]]
  */
 export const getItems = async (
     accountName: string,
     character: string,
-    sessionId?: string,
     options?: RealmOptions
 ): Promise<Items> => {
     const url = buildURL(`https://api.pathofexile.com/character-window/get-items`, options, null, {
@@ -50,21 +45,22 @@ export const getItems = async (
         character,
     });
 
-    return await requestTransformed(Items, url, { sessionId, userAgent: Settings.userAgent });
+    return await requestTransformed(Items, url);
 };
 
 /**
+ * @remarks
+ * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
+ *
  * @endpoint https://api.pathofexile.com/character-window/get-passive-skills
  * @param accountName
  * @param character
- * @param sessionId Necessary if profile or character tab is private
  * @param options
  * @throws [[APIError]]
  */
 export const getPassiveSkills = async (
     accountName: string,
     character: string,
-    sessionId?: string,
     options?: RealmOptions
 ): Promise<PassiveSkills> => {
     const url = buildURL(
@@ -74,8 +70,5 @@ export const getPassiveSkills = async (
         { accountName, character }
     );
 
-    return await requestTransformed(PassiveSkills, url, {
-        sessionId,
-        userAgent: Settings.userAgent,
-    });
+    return await requestTransformed(PassiveSkills, url);
 };

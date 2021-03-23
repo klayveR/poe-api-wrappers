@@ -8,19 +8,12 @@ import { Collection } from "./Collection";
 describe("Path of Exile - Account - Avatars - Collection", function () {
     this.timeout(10000);
 
-    let sessionId: string;
-
-    before(() => {
-        sessionId = process.env["POESESSID"] as string;
-    });
-
     describe("#getNextPage()", () => {
         let mockCollection: Collection;
 
         before(() => {
             mockCollection = new Collection();
             mockCollection.collection = [];
-            mockCollection.sessionId = sessionId;
         });
 
         it("should fetch the next 16 avatars", async () => {

@@ -1,5 +1,4 @@
 import { buildURL, requestTransformed } from "../../../common/functions";
-import { Settings } from "../../Settings";
 import * as Fetch from "./fetch";
 import * as Ignore from "./ignore";
 import * as Items from "./items";
@@ -14,9 +13,7 @@ import * as Stats from "./stats";
  */
 export const getLeagues = async (): Promise<Leagues.League[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/leagues`);
-    const response = await requestTransformed(Leagues.Response, url, {
-        userAgent: Settings.userAgent,
-    });
+    const response = await requestTransformed(Leagues.Response, url);
     return response.result;
 };
 
@@ -26,9 +23,7 @@ export const getLeagues = async (): Promise<Leagues.League[]> => {
  */
 export const getItems = async (): Promise<Items.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/items`);
-    const response = await requestTransformed(Items.Response, url, {
-        userAgent: Settings.userAgent,
-    });
+    const response = await requestTransformed(Items.Response, url);
     return response.result;
 };
 
@@ -38,9 +33,7 @@ export const getItems = async (): Promise<Items.Group[]> => {
  */
 export const getStats = async (): Promise<Stats.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/stats`);
-    const response = await requestTransformed(Stats.Response, url, {
-        userAgent: Settings.userAgent,
-    });
+    const response = await requestTransformed(Stats.Response, url);
     return response.result;
 };
 
@@ -50,30 +43,24 @@ export const getStats = async (): Promise<Stats.Group[]> => {
  */
 export const getStatic = async (): Promise<Static.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/static`);
-    const response = await requestTransformed(Static.Response, url, {
-        userAgent: Settings.userAgent,
-    });
+    const response = await requestTransformed(Static.Response, url);
     return response.result;
 };
 
 /**
+ * @remarks
+ * Requires [[Settings.sessionId]] to be set.
+ *
  * @endpoint https://api.pathofexile.com/trade/ignore
- * @param sessionId
  * @param page Between `1` and `10`, will default to `1` if out of range
  * @returns A list of up to 50 ignored accounts
  * @throws [[APIError]]
  */
-export const getIgnoredAccounts = async (
-    sessionId: string,
-    page = 1
-): Promise<Ignore.Collection> => {
+export const getIgnoredAccounts = async (page = 1): Promise<Ignore.Collection> => {
     const url = buildURL(`https://api.pathofexile.com/trade/ignore`, null, null, {
         page: page.toString(),
     });
-    return await requestTransformed(Ignore.Collection, url, {
-        sessionId,
-        userAgent: Settings.userAgent,
-    });
+    return await requestTransformed(Ignore.Collection, url);
 };
 
 /**
@@ -82,19 +69,11 @@ export const getIgnoredAccounts = async (
 const getSearchResult = async (
     league: string,
     endpoint: string,
-    query: Search.QueryContainer,
-    sessionId?: string
+    query: Search.QueryContainer
 ): Promise<Search.Result> => {
     const url = new URL(`https://www.pathofexile.com/api/trade/${endpoint}/${league}`);
 
-    const result = await requestTransformed(
-        Search.Result,
-        url,
-        { sessionId, userAgent: Settings.userAgent },
-        "post",
-        query
-    );
-    result.sessionId = sessionId;
+    const result = await requestTransformed(Search.Result, url, "post", query);
 
     return result;
 };
@@ -105,15 +84,13 @@ const getSearchResult = async (
  * @endpoint https://www.pathofexile.com/api/trade/search/league
  * @param league
  * @param query
- * @param sessionId
  * @throws [[APIError]]
  */
 export const search = async (
     league: string,
-    query: Search.SearchQueryContainer,
-    sessionId?: string
+    query: Search.SearchQueryContainer
 ): Promise<Search.Result> => {
-    return await getSearchResult(league, "search", query, sessionId);
+    return await getSearchResult(league, "search", query);
 };
 
 /**
@@ -122,32 +99,23 @@ export const search = async (
  * @endpoint https://www.pathofexile.com/api/trade/exchange/league
  * @param league
  * @param query
- * @param sessionId
  * @throws [[APIError]]
  */
 export const exchange = async (
     league: string,
-    query: Search.ExchangeQueryContainer,
-    sessionId?: string
+    query: Search.ExchangeQueryContainer
 ): Promise<Search.Result> => {
-    return await getSearchResult(league, "exchange", query, sessionId);
+    return await getSearchResult(league, "exchange", query);
 };
 
 /**
  * @endpoint https://api.pathofexile.com/trade/fetch
  * @param hashes
- * @param sessionId
  * @throws [[APIError]]
  */
-export const getFromHashes = async (
-    hashes: string[],
-    sessionId?: string
-): Promise<Fetch.Result[]> => {
+export const getFromHashes = async (hashes: string[]): Promise<Fetch.Result[]> => {
     const hashString = hashes.join(",");
     const url = new URL(`https://api.pathofexile.com/trade/fetch/${hashString}`);
-    const response = await requestTransformed(Fetch.Response, url, {
-        sessionId,
-        userAgent: Settings.userAgent,
-    });
+    const response = await requestTransformed(Fetch.Response, url);
     return response.result;
 };
