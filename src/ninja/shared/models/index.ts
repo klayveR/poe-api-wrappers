@@ -1,3 +1,3 @@
 export * from "./Language";
 export * from "./LanguageCode";
-export * from "./SparkLine";
+export * from "./Sparkline";
