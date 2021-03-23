@@ -45,4 +45,17 @@ export interface Options extends RealmOptions {
      * Only available when `type=labyrinth`.
      */
     start?: string;
+
+    /**
+     * Filters the ladder by class.
+     *
+     * `0`: Scion
+     * `1`: Marauder
+     * `2`: Ranger
+     * `3`: Witch
+     * `4`: Duelist
+     * `5`: Templar
+     * `6`: Shadow
+     */
+    class?: string;
 }

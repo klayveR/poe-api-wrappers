@@ -2,7 +2,9 @@
 
 [![NPM version](https://img.shields.io/npm/v/@klayver/poe-api-wrappers?style=for-the-badge)](https://www.npmjs.com/package/@klayver/poe-api-wrappers) [![NPM license](https://img.shields.io/npm/l/@klayver/poe-api-wrappers?style=for-the-badge)](https://github.com/klayveR/poe-api-wrappers/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/klayveR/poe-api-wrappers?style=for-the-badge)](https://github.com/klayveR/poe-api-wrappers/issues) [![GitHub language](https://img.shields.io/github/languages/top/klayveR/poe-api-wrappers?style=for-the-badge)](https://github.com/klayveR/poe-api-wrappers)
 
-This library was created to make interacting with the official and third-party APIs for Path of Exile easier. Data can be requested with a simple function call, the responses are then converted into fully typed class objects which you can interact with. For example, when posting a search query to the trade API, you can immediately request the listings by calling a function on the search result object which contains the hashes (see [Examples](#examples)). Please check out the documentation for more information.
+This library was created to make interacting with the official and third-party APIs for Path of Exile easier. Data can be requested with a simple function call, the responses are then converted into fully typed class objects which you can interact with. For example, when posting a search query to the trade API, you can immediately request the listings by calling a function on the search result object which contains the hashes (see [Examples](#examples)).
+
+Please check out the [documentation](https://klayver.github.io/poe-api-wrappers/) for more information.
 
 Since there are so many APIs with varying response structures, things may be incorrect or missing. If you notice something that needs to be added or fixed, please submit an [issue](https://github.com/klayveR/poe-api-wrappers/issues).
 

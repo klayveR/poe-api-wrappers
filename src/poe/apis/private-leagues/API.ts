@@ -14,10 +14,13 @@ import { MembersOptions } from "./models";
  * @throws [[APIException]]
  */
 export const getMembers = async (
-    id: string,
+    id: number,
     sessionId: string,
     options?: MembersOptions
 ): Promise<Collection> => {
-    const url = buildURL(`https://api.pathofexile.com/private-league-member/${id}`, options);
+    const url = buildURL(
+        `https://api.pathofexile.com/private-league-member/${id.toString()}`,
+        options
+    );
     return await requestTransformed(Collection, url, { sessionId, userAgent: Settings.userAgent });
 };
