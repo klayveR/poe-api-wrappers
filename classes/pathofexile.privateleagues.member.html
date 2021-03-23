@@ -107,9 +107,10 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathofexile.privateleagues.member.html#rolename" class="tsd-kind-icon">role<wbr>Name</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="pathofexile.privateleagues.member.html#getcharacters" class="tsd-kind-icon">get<wbr>Characters</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="pathofexile.privateleagues.member.html#toplain" class="tsd-kind-icon">to<wbr>Plain</a></li>
 							</ul>
 						</section>
@@ -193,8 +194,39 @@
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcharacters" class="tsd-anchor"></a>
+					<h3>get<wbr>Characters</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Characters<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.shared.realmoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">RealmOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="pathofexile.characters.character.html" class="tsd-signature-type" data-tsd-kind="Class">Character</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Trying to get characters when the profile or character tab is private will result in an error.</p>
+									</dd>
+									<dt>throws</dt>
+									<dd><p><a href="pathofexile.apierror.html">APIError</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/pathofexile.shared.realmoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">RealmOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="pathofexile.characters.character.html" class="tsd-signature-type" data-tsd-kind="Class">Character</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A list of characters from this member</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="toplain" class="tsd-anchor"></a>
 					<h3>to<wbr>Plain</h3>
@@ -313,6 +345,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="pathofexile.privateleagues.member.html#rolename" class="tsd-kind-icon">role<wbr>Name</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="pathofexile.privateleagues.member.html#getcharacters" class="tsd-kind-icon">get<wbr>Characters</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="pathofexile.privateleagues.member.html#toplain" class="tsd-kind-icon">to<wbr>Plain</a>
 							</li>
@@ -342,11 +377,12 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
 			</ul>
 		</div>
 	</div>
