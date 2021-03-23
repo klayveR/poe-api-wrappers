@@ -33,7 +33,7 @@ export class League extends Transformable {
 
     /**
      * @remarks
-     * If `store` is set to true and [[ladder]] had a ladder already, it will be overwritten.
+     * If `store` is set to true the [[ladder]] property will be overwritten.
      *
      * @param options
      * @param store If set to `true`, the ladder will be saved in the [[ladder]] property

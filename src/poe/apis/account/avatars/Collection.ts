@@ -35,8 +35,9 @@ export class Collection extends Transformable {
      * @remarks
      * Uses the same [[AvatarsOptions]] that have been used getting this avatar collection.
      *
-     * @param append Set to `true` if the next avatars should be appended to this collection
+     * @param append If set to `true`, the avatars will be appended to the [[collection]] property
      * @returns The next set of avatars, `null` when there are no more entries
+     * @throws [[APIError]]
      */
     public async getNextPage(append = true): Promise<Avatar[] | null> {
         if (this._options.page == null || this._sessionId == null) {
