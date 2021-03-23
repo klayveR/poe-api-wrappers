@@ -107,7 +107,7 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.guild.html" class="tsd-signature-type" data-tsd-kind="Class">Guild</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.guild.html" class="tsd-signature-type" data-tsd-kind="Class">Guild</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -115,6 +115,9 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Requires <a href="../classes/pathofexile.settings.html#sessionid">Settings.sessionId</a> to be set.</p>
+									</dd>
 									<dt>endpoint</dt>
 									<dd><p><a href="https://api.pathofexile.com/guild">https://api.pathofexile.com/guild</a></p>
 									</dd>
@@ -123,12 +126,6 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>sessionId: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.guild.html" class="tsd-signature-type" data-tsd-kind="Class">Guild</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>Guild data of the account the session ID belongs to</p>
 						</li>
@@ -138,7 +135,7 @@
 					<a name="getaccountpointtransactions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Account<wbr>Point<wbr>Transactions</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Account<wbr>Point<wbr>Transactions<span class="tsd-signature-symbol">(</span>sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.pointtransactions.html" class="tsd-signature-type" data-tsd-kind="Class">PointTransactions</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Account<wbr>Point<wbr>Transactions<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.pointtransactions.html" class="tsd-signature-type" data-tsd-kind="Class">PointTransactions</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -146,6 +143,9 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Requires <a href="../classes/pathofexile.settings.html#sessionid">Settings.sessionId</a> to be set.</p>
+									</dd>
 									<dt>endpoint</dt>
 									<dd><p><a href="https://api.pathofexile.com/account/guild/point-transactions">https://api.pathofexile.com/account/guild/point-transactions</a></p>
 									</dd>
@@ -156,9 +156,6 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li>
-									<h5>sessionId: <span class="tsd-signature-type">string</span></h5>
-								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a></h5>
 								</li>
@@ -172,7 +169,7 @@
 					<a name="getpointtransactions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Point<wbr>Transactions</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Point<wbr>Transactions<span class="tsd-signature-symbol">(</span>sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.pointtransactions.html" class="tsd-signature-type" data-tsd-kind="Class">PointTransactions</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Point<wbr>Transactions<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.pointtransactions.html" class="tsd-signature-type" data-tsd-kind="Class">PointTransactions</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -180,6 +177,9 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Requires <a href="../classes/pathofexile.settings.html#sessionid">Settings.sessionId</a> to be set.</p>
+									</dd>
 									<dt>endpoint</dt>
 									<dd><p><a href="https://api.pathofexile.com/guild/point-transactions">https://api.pathofexile.com/guild/point-transactions</a></p>
 									</dd>
@@ -190,9 +190,6 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li>
-									<h5>sessionId: <span class="tsd-signature-type">string</span></h5>
-								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a></h5>
 								</li>
@@ -206,7 +203,7 @@
 					<a name="getstashhistory" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Stash<wbr>History</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stash<wbr>History<span class="tsd-signature-symbol">(</span>guildId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.stashhistory.html" class="tsd-signature-type" data-tsd-kind="Class">StashHistory</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stash<wbr>History<span class="tsd-signature-symbol">(</span>guildId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.guild.stashhistory.html" class="tsd-signature-type" data-tsd-kind="Class">StashHistory</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -214,6 +211,9 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Requires <a href="../classes/pathofexile.settings.html#sessionid">Settings.sessionId</a> to be set.</p>
+									</dd>
 									<dt>endpoint</dt>
 									<dd><p><a href="https://api.pathofexile.com/guild/id/stash/history">https://api.pathofexile.com/guild/id/stash/history</a></p>
 									</dd>
@@ -226,12 +226,6 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>guildId: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Guild ID</p>
-									</div>
-								</li>
-								<li>
-									<h5>sessionId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/pathofexile.guild.stashhistoryoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">StashHistoryOptions</a></h5>
@@ -269,9 +263,6 @@
 							</li>
 							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
 								<a href="pathofexile.mtx.html">MTX</a>
-							</li>
-							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
-								<a href="pathofexile.pvp.html">PVP</a>
 							</li>
 							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
 								<a href="pathofexile.privateleagues.html">Private<wbr>Leagues</a>

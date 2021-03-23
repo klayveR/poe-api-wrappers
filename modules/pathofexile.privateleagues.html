@@ -117,7 +117,7 @@
 					<a name="getmembers" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Members</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Members<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.privateleagues.membersoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">MembersOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.privateleagues.collection.html" class="tsd-signature-type" data-tsd-kind="Class">Collection</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Members<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/pathofexile.privateleagues.membersoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">MembersOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/pathofexile.privateleagues.collection.html" class="tsd-signature-type" data-tsd-kind="Class">Collection</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -126,13 +126,16 @@
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>remarks</dt>
+									<dd><p>Requires <a href="../classes/pathofexile.settings.html#sessionid">Settings.sessionId</a> to be set.</p>
+									</dd>
+									<dt>remarks</dt>
 									<dd><p>The account tied to the provided session id must be part of the private league.</p>
 									</dd>
 									<dt>endpoint</dt>
 									<dd><p><a href="https://api.pathofexile.com/private-league-member/id">https://api.pathofexile.com/private-league-member/id</a></p>
 									</dd>
 									<dt>throws</dt>
-									<dd><p>[[APIException]]</p>
+									<dd><p><a href="../classes/pathofexile.apierror.html">APIError</a></p>
 									</dd>
 								</dl>
 							</div>
@@ -143,9 +146,6 @@
 									<div class="tsd-comment tsd-typography">
 										<p>ID of the private league without <code>PL</code> prefix</p>
 									</div>
-								</li>
-								<li>
-									<h5>sessionId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/pathofexile.privateleagues.membersoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">MembersOptions</a></h5>
@@ -183,9 +183,6 @@
 							</li>
 							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
 								<a href="pathofexile.mtx.html">MTX</a>
-							</li>
-							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
-								<a href="pathofexile.pvp.html">PVP</a>
 							</li>
 							<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
 								<a href="pathofexile.privateleagues.html">Private<wbr>Leagues</a>

@@ -108,12 +108,6 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="pathofexile.trade.search.result.html#sessionid" class="tsd-kind-icon">session<wbr>Id</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="pathofexile.trade.search.result.html#getnextitems" class="tsd-kind-icon">get<wbr>Next<wbr>Items</a></li>
@@ -187,29 +181,6 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
-					<a name="sessionid" class="tsd-anchor"></a>
-					<h3>session<wbr>Id</h3>
-					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> sessionId<span class="tsd-signature-symbol">(</span>sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>sessionId: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getnextitems" class="tsd-anchor"></a>
@@ -223,17 +194,13 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>Uses the session ID supplied when getting the hashes.
-										Items are fetched in sets of 10.</p>
-									</dd>
 									<dt>throws</dt>
 									<dd><p><a href="pathofexile.apierror.html">APIError</a></p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="pathofexile.trade.fetch.result.html" class="tsd-signature-type" data-tsd-kind="Class">Result</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A list of item listings, <code>null</code> when there are no more listings to fetch</p>
+							<p>A list of item listings in sets of 10, <code>null</code> when there are no more listings to fetch</p>
 						</li>
 					</ul>
 				</section>
@@ -292,9 +259,6 @@
 							</li>
 							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
 								<a href="../modules/pathofexile.mtx.html">MTX</a>
-							</li>
-							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
-								<a href="../modules/pathofexile.pvp.html">PVP</a>
 							</li>
 							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
 								<a href="../modules/pathofexile.privateleagues.html">Private<wbr>Leagues</a>
@@ -365,9 +329,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="pathofexile.trade.search.result.html#total" class="tsd-kind-icon">total</a>
-							</li>
-							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
-								<a href="pathofexile.trade.search.result.html#sessionid" class="tsd-kind-icon">session<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="pathofexile.trade.search.result.html#getnextitems" class="tsd-kind-icon">get<wbr>Next<wbr>Items</a>
