@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformed, requestTransformedArray } from "../../functions";
+import { Settings } from "../../Settings";
+import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
 import { RealmOptions } from "../../shared/models";
 import { Character } from "./Character";
 import { Items } from "./Items";
@@ -25,7 +25,10 @@ export const get = async (
         { accountName }
     );
 
-    return await requestTransformedArray(Character, url, sessionId);
+    return await requestTransformedArray(Character, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };
 
 /**
@@ -47,7 +50,7 @@ export const getItems = async (
         character,
     });
 
-    return await requestTransformed(Items, url, sessionId);
+    return await requestTransformed(Items, url, { sessionId, userAgent: Settings.userAgent });
 };
 
 /**
@@ -71,5 +74,8 @@ export const getPassiveSkills = async (
         { accountName, character }
     );
 
-    return await requestTransformed(PassiveSkills, url, sessionId);
+    return await requestTransformed(PassiveSkills, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };

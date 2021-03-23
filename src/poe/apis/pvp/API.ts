@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformedArray } from "../../functions";
+import { Settings } from "../../Settings";
+import { buildURL, requestTransformedArray } from "../../../common/functions";
 import { Match } from "./Match";
 import { MatchOptions } from "./models";
 
@@ -10,5 +10,5 @@ import { MatchOptions } from "./models";
  */
 export const getMatches = async (options?: MatchOptions): Promise<Match[]> => {
     const url = buildURL(`https://api.pathofexile.com/pvp-matches`, options);
-    return await requestTransformedArray(Match, url);
+    return await requestTransformedArray(Match, url, { userAgent: Settings.userAgent });
 };

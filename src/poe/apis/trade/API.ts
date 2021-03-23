@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformed } from "../../functions";
+import { Settings } from "../../Settings";
+import { buildURL, requestTransformed } from "../../../common/functions";
 import * as Fetch from "./fetch";
 import * as Ignore from "./ignore";
 import * as Items from "./items";
@@ -14,7 +14,9 @@ import * as Stats from "./stats";
  */
 export const getLeagues = async (): Promise<Leagues.League[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/leagues`);
-    const response = await requestTransformed(Leagues.Response, url);
+    const response = await requestTransformed(Leagues.Response, url, {
+        userAgent: Settings.userAgent,
+    });
     return response.result;
 };
 
@@ -24,7 +26,9 @@ export const getLeagues = async (): Promise<Leagues.League[]> => {
  */
 export const getItems = async (): Promise<Items.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/items`);
-    const response = await requestTransformed(Items.Response, url);
+    const response = await requestTransformed(Items.Response, url, {
+        userAgent: Settings.userAgent,
+    });
     return response.result;
 };
 
@@ -34,7 +38,9 @@ export const getItems = async (): Promise<Items.Group[]> => {
  */
 export const getStats = async (): Promise<Stats.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/stats`);
-    const response = await requestTransformed(Stats.Response, url);
+    const response = await requestTransformed(Stats.Response, url, {
+        userAgent: Settings.userAgent,
+    });
     return response.result;
 };
 
@@ -44,7 +50,9 @@ export const getStats = async (): Promise<Stats.Group[]> => {
  */
 export const getStatic = async (): Promise<Static.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/static`);
-    const response = await requestTransformed(Static.Response, url);
+    const response = await requestTransformed(Static.Response, url, {
+        userAgent: Settings.userAgent,
+    });
     return response.result;
 };
 
@@ -62,7 +70,10 @@ export const getIgnoredAccounts = async (
     const url = buildURL(`https://api.pathofexile.com/trade/ignore`, null, null, {
         page: page.toString(),
     });
-    return await requestTransformed(Ignore.Collection, url, sessionId);
+    return await requestTransformed(Ignore.Collection, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
 };
 
 /**
@@ -76,7 +87,13 @@ const getSearchResult = async (
 ): Promise<Search.Result> => {
     const url = new URL(`https://www.pathofexile.com/api/trade/${endpoint}/${league}`);
 
-    const result = await requestTransformed(Search.Result, url, sessionId, "post", query);
+    const result = await requestTransformed(
+        Search.Result,
+        url,
+        { sessionId, userAgent: Settings.userAgent },
+        "post",
+        query
+    );
     result.sessionId = sessionId;
 
     return result;
@@ -128,6 +145,9 @@ export const getFromHashes = async (
 ): Promise<Fetch.Result[]> => {
     const hashString = hashes.join(",");
     const url = new URL(`https://api.pathofexile.com/trade/fetch/${hashString}`);
-    const response = await requestTransformed(Fetch.Response, url, sessionId);
+    const response = await requestTransformed(Fetch.Response, url, {
+        sessionId,
+        userAgent: Settings.userAgent,
+    });
     return response.result;
 };

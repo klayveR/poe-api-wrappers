@@ -1,4 +1,5 @@
-import { requestTransformed } from "../../functions";
+import { requestTransformed } from "../../../common/functions";
+import { Settings } from "../../Settings";
 import { Chunk } from "./Chunk";
 
 /**
@@ -14,5 +15,5 @@ export const getChunk = async (nextChangeId?: string): Promise<Chunk> => {
     }
 
     const url = new URL(urlString);
-    return await requestTransformed(Chunk, url);
+    return await requestTransformed(Chunk, url, { userAgent: Settings.userAgent });
 };

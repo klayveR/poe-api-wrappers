@@ -1,5 +1,5 @@
-import { buildURL } from "../../../common/functions";
-import { requestTransformed } from "../../functions";
+import { Settings } from "../../Settings";
+import { buildURL, requestTransformed } from "../../../common/functions";
 import { Collection } from "./Collection";
 import { MembersOptions } from "./models";
 
@@ -19,5 +19,5 @@ export const getMembers = async (
     options?: MembersOptions
 ): Promise<Collection> => {
     const url = buildURL(`https://api.pathofexile.com/private-league-member/${id}`, options);
-    return await requestTransformed(Collection, url, sessionId);
+    return await requestTransformed(Collection, url, { sessionId, userAgent: Settings.userAgent });
 };
