@@ -5,7 +5,7 @@ import { expect } from "chai";
 
 import * as API from "./API";
 
-describe("poe.ninja - Currency", function () {
+describe("poe.ninja - Item", function () {
     this.timeout(10000);
 
     it("#get(league, type) - should return item overview", async () => {
