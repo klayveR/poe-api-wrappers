@@ -22,9 +22,11 @@ Please refer to [CONTRIBUTING.md](https://github.com/klayveR/poe-api-wrappers/bl
 
 # Examples
 
+> ⚠️ The following examples do not handle errors to keep it simple. You should wrap your calls in a try/catch block or do whatever you do to catch errors (see [Handling errors](#handling-errors)).
+
 ## Path of Exile API
 
-> ⚠️ The following examples do not handle errors to keep it simple. You should wrap your calls in a try/catch block or do whatever you do to catch errors (see [Handling errors](#handling-errors)). Also, keep in mind that many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.
+> Many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.
 
 ### Setup
 
@@ -94,7 +96,25 @@ if (results != null) {
 }
 ```
 
-### Handling errors
+## poe.ninja API
+
+### Setup
+
+```typescript
+import { Ninja } from "@klayver/poe-api-wrappers";
+```
+
+### Get currency exchange rates for currency items in Standard league
+
+```typescript
+const collection = await Ninja.Currency.get("Standard", "Currency");
+
+for (const currency of collection.entries) {
+    console.log(`${currency.name} costs ${currency.chaosEquivalent} Chaos Orb`);
+}
+```
+
+## Handling errors
 
 Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the [official developer API documentation](https://th.pathofexile.com/developer/docs/api-errors). Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.
 
