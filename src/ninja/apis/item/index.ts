@@ -1,4 +1,4 @@
 export * from "./API";
-export * from "./Entry";
+export * from "./Item";
 export * from "./Collection";
 export * from "./models";
