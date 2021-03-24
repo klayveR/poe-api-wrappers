@@ -27,17 +27,17 @@ export const get = async (
  * @endpoint https://poe.ninja/api/data/ItemHistory
  * @param league
  * @param type
- * @param itemId
+ * @param id
  */
 export const getHistory = async (
     league: string,
     type: ItemType,
-    itemId: string
+    id: number
 ): Promise<HistoryPoint[]> => {
     const url = buildURL(`https://poe.ninja/api/data/ItemHistory`, null, null, {
         league,
         type,
-        itemId,
+        itemId: id.toString(),
     });
 
     return await requestTransformedArray(HistoryPoint, url);

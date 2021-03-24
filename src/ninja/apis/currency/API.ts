@@ -27,17 +27,17 @@ export const get = async (
  * @endpoint https://poe.ninja/api/data/CurrencyHistory
  * @param league
  * @param type
- * @param itemId
+ * @param id
  */
 export const getHistory = async (
     league: string,
     type: CurrencyType,
-    currencyId: string
+    id: number
 ): Promise<History> => {
     const url = buildURL(`https://poe.ninja/api/data/CurrencyHistory`, null, null, {
         league,
         type,
-        currencyId,
+        currencyId: id.toString(),
     });
 
     return await requestTransformed(History, url);
