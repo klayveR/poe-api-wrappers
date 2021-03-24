@@ -1,6 +1,6 @@
 import { Expose } from "class-transformer";
 
-export class Response {
+export class Stats {
     id!: number;
 
     /**
