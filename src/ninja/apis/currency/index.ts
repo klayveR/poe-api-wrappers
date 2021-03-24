@@ -1,4 +1,4 @@
 export * from "./API";
-export * from "./Currency";
-export * from "./Response";
+export * from "./Entry";
+export * from "./Collection";
 export * from "./models";

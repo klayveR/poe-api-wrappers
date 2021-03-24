@@ -2,16 +2,16 @@ import { Expose, Type } from "class-transformer";
 
 import { Transformable } from "../../../common/classes";
 import { Language } from "../../shared/models";
-import { Currency } from "./Currency";
+import { Entry } from "./Entry";
 import { CurrencyDetail } from "./models";
 
-export class Response extends Transformable {
+export class Collection extends Transformable {
     /**
      * @overrides `lines`
      */
     @Expose({ name: "lines" })
-    @Type(/* istanbul ignore next */ () => Currency)
-    currencies!: Currency[];
+    @Type(/* istanbul ignore next */ () => Entry)
+    entries!: Entry[];
 
     currencyDetails!: CurrencyDetail[];
     language!: Language;

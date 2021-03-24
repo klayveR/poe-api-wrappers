@@ -2,7 +2,7 @@ import { buildURL, requestTransformed, requestTransformedArray } from "../../../
 import { HistoryPoint } from "../../shared";
 import { LanguageCode } from "../../shared/models";
 import { ItemType } from "./models";
-import { Response } from "./Response";
+import { Collection } from "./Collection";
 
 /**
  * @endpoint https://poe.ninja/api/data/ItemOverview
@@ -14,13 +14,13 @@ export const get = async (
     league: string,
     type: ItemType,
     language: LanguageCode = "en"
-): Promise<Response> => {
+): Promise<Collection> => {
     const url = buildURL(`https://poe.ninja/api/data/ItemOverview`, null, null, {
         league,
         type,
         language,
     });
-    return await requestTransformed(Response, url);
+    return await requestTransformed(Collection, url);
 };
 
 /**

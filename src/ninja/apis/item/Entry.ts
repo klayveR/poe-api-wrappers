@@ -3,7 +3,7 @@ import { Sparkline } from "../../shared/models";
 import { Modifier } from "./models/Modifier";
 import { TradeInfo } from "./models/TradeInfo";
 
-export class Item extends Transformable {
+export class Entry extends Transformable {
     id!: number;
     name!: string;
     icon!: null | string;
