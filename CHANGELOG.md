@@ -1,3 +1,17 @@
+# [2.1.0](https://github.com/klayveR/poe-api-wrappers/compare/v2.0.1...v2.1.0) (2021-03-24)
+
+
+### Bug Fixes
+
+* change history id parameter to number ([14c7115](https://github.com/klayveR/poe-api-wrappers/commit/14c711540f7253a08afed6b6b238b2c3f619b9c7))
+
+
+### Features
+
+* add poe.ninja get stats ([1086441](https://github.com/klayveR/poe-api-wrappers/commit/108644180126013f90fb51a2d92e3fdda46af73a))
+* add poe.ninja item and currency history ([667e383](https://github.com/klayveR/poe-api-wrappers/commit/667e3831692651ad16d709bf4f0db24aecb6dd9a))
+* add poe.ninja wrapper ([0705796](https://github.com/klayveR/poe-api-wrappers/commit/0705796771d05ebc95709d778d9f1c2e2b6802e0))
+
 ## [2.0.1](https://github.com/klayveR/poe-api-wrappers/compare/v2.0.0...v2.0.1) (2021-03-23)
 
 
