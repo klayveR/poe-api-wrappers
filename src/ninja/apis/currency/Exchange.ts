@@ -1,6 +1,7 @@
+import { Transformable } from "../../../common/classes";
 import { Expose, Type } from "class-transformer";
 
-export class Exchange {
+export class Exchange extends Transformable {
     id!: number;
     count!: number;
     value!: number;

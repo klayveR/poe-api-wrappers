@@ -1,4 +1,5 @@
 import { Expose, Type } from "class-transformer";
+import { TransformNullToUndefined } from "../../../common/decorators";
 import { Transformable } from "../../../common/classes";
 import { Sparkline } from "../../shared/models";
 import { Exchange } from "./Exchange";
@@ -42,6 +43,7 @@ export class Currency extends Transformable {
      */
     @Expose({ name: "pay" })
     @Type(/* istanbul ignore next */ () => Exchange)
+    @TransformNullToUndefined()
     sell?: Exchange;
 
     /**
@@ -49,5 +51,6 @@ export class Currency extends Transformable {
      */
     @Expose({ name: "receive" })
     @Type(/* istanbul ignore next */ () => Exchange)
+    @TransformNullToUndefined()
     buy?: Exchange;
 }
