@@ -3,12 +3,23 @@ name: Lint
 on: [push, pull_request]
 
 jobs:
-    run-linters:
-        name: Run linters
+    pre_job:
+        continue-on-error: true
         runs-on: ubuntu-latest
 
-        # We want to run on external PRs, but not on our own internal PRs as they'll be run by the push to the branch.
-        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+        outputs:
+            should_skip: ${{ steps.skip_check.outputs.should_skip }}
+
+        steps:
+            - id: skip_check
+              uses: fkirc/skip-duplicate-actions@master
+
+    lint:
+        needs: pre_job
+        if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+
+        name: Run linters
+        runs-on: ubuntu-latest
 
         steps:
             - name: Skip Duplicate Actions
