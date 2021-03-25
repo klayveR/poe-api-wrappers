@@ -8,8 +8,8 @@
         "test": "dotenv -e .env mocha",
         "test:ci": "mocha",
         "test:coverage": "dotenv -e .env nyc mocha",
-        "lint": "eslint --cache -f unix --ext .ts src/",
-        "lint:fix": "eslint --fix --cache -f unix --ext .ts src/",
+        "lint": "eslint src/",
+        "lint:fix": "eslint --fix src/",
         "prettier": "prettier --write \"**/*.ts\""
     },
     "keywords": [
