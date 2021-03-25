@@ -8,6 +8,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Skip Duplicate Actions
+              uses: fkirc/skip-duplicate-actions@v3.4.0
+
             - name: Checkout
               uses: actions/checkout@v2
 
