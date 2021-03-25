@@ -22,10 +22,6 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [14.x]
-
         steps:
             - name: Skip Duplicate Actions
               uses: fkirc/skip-duplicate-actions@v3.4.0
