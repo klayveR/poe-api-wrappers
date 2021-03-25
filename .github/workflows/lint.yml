@@ -14,6 +14,8 @@ jobs:
         steps:
             - id: skip_check
               uses: fkirc/skip-duplicate-actions@master
+              with:
+                  concurrent_skipping: "same_content"
 
     lint:
         needs: pre_job
