@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
     pre_job:
+        name: Check if skippable
         continue-on-error: true
         runs-on: ubuntu-latest
 
