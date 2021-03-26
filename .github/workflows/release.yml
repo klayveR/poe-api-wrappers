@@ -16,6 +16,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
               with:
+                  token: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
                   fetch-depth: 0
 
             - name: Setup Node.js
@@ -31,7 +32,6 @@ jobs:
 
             - name: Release
               env:
-                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: npx semantic-release
