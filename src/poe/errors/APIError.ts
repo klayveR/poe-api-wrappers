@@ -1,12 +1,12 @@
-import { ExternalAPIError } from "./models/ExternalAPIError";
+import { ResponseError } from "../../common/errors";
 
-export class APIError extends Error {
-    public code = 0;
+export class APIError extends ResponseError {
+    public code: number;
 
-    constructor(error: ExternalAPIError) {
-        super(error.error.message);
+    constructor(message: string, status: number, code: number) {
+        super(message, status);
         Object.setPrototypeOf(this, APIError.prototype);
 
-        this.code = error.error.code;
+        this.code = code;
     }
 }

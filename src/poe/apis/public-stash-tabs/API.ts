@@ -14,5 +14,5 @@ export const getChunk = async (nextChangeId?: string): Promise<Chunk> => {
     }
 
     const url = new URL(urlString);
-    return await requestTransformed(Chunk, url);
+    return <Chunk>await requestTransformed(Chunk, url);
 };

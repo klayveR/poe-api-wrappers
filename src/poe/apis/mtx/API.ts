@@ -10,5 +10,5 @@ import { SpecialsOptions } from "./models";
 export const getSpecials = async (options?: SpecialsOptions): Promise<Collection> => {
     const url = buildURL(`https://api.pathofexile.com/shop/microtransactions/specials`, options);
 
-    return await requestTransformed(Collection, url);
+    return <Collection>await requestTransformed(Collection, url);
 };

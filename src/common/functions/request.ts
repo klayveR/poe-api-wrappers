@@ -1,66 +1,36 @@
-import axios, { AxiosRequestConfig, Method } from "axios";
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import axios, { AxiosError, AxiosInstance, AxiosResponse, Method } from "axios";
 import { plainToClass } from "class-transformer";
 import { Settings } from "../../poe";
 
 import { APIError, ExternalAPIError } from "../../poe/errors";
+import { ResponseError } from "../errors";
 
-export const request = async (
-    url: URL,
-    method: Method = "get",
-    payload: unknown = {}
-): Promise<string> => {
-    try {
-        const config: AxiosRequestConfig = {
-            url: url.toString(),
-            method: method,
-            headers: buildHeaders(url),
-            data: payload,
-            transformResponse: [
-                (data: string): string => {
-                    return data;
-                },
-            ],
-        };
+const onResponse = (response: AxiosResponse): AxiosResponse => {
+    return response;
+};
 
-        const response = await axios(config);
-        const data = <string>response.data;
+const onResponseError = (error: AxiosError): Promise<AxiosError> => {
+    if (error.response) {
+        const status = error.response.status;
+        const statusText = error.response.statusText;
 
-        return stripByteOrderMark(data);
-    } catch (error: unknown) {
-        if (axios.isAxiosError(error) && error.response) {
-            if (url.host.includes("pathofexile.com")) {
-                const data = <ExternalAPIError>JSON.parse(error.response.data);
-                throw new APIError(data);
-            }
+        if ((<string>error.response.request.host).includes("pathofexile.com")) {
+            const data = <ExternalAPIError>error.response.data;
+            return Promise.reject(new APIError(data.error.message, status, data.error.code));
         }
 
-        throw error;
+        return Promise.reject(new ResponseError(statusText, status));
     }
+
+    return Promise.reject(error);
 };
 
-export const requestTransformed = async <T>(
-    cls: new () => T,
-    url: URL,
-    method: Method = "get",
-    payload: unknown = {}
-): Promise<T> => {
-    const response = await request(url, method, payload);
-    const obj = <T>JSON.parse(response);
+const axiosInstance: AxiosInstance = axios.create({
+    responseType: "json",
+});
 
-    return plainToClass(cls, obj);
-};
-
-export const requestTransformedArray = async <T>(
-    cls: new () => T,
-    url: URL,
-    method: Method = "get",
-    payload: unknown = {}
-): Promise<T[]> => {
-    const response = await request(url, method, payload);
-    const obj = <T[]>JSON.parse(response);
-
-    return plainToClass(cls, obj);
-};
+axiosInstance.interceptors.response.use(onResponse, onResponseError);
 
 export const buildHeaders = (url: URL): Record<string, string> => {
     const headers: Record<string, string> = {};
@@ -78,10 +48,18 @@ export const buildHeaders = (url: URL): Record<string, string> => {
     return headers;
 };
 
-export const stripByteOrderMark = (str: string): string => {
-    if (str.charCodeAt(0) === 0xfeff) {
-        str = str.slice(1);
-    }
+export const requestTransformed = async <T>(
+    cls: new () => T,
+    url: URL,
+    method?: Method,
+    payload?: unknown
+): Promise<T | T[]> => {
+    const response = await axiosInstance.request({
+        url: url.toString(),
+        method: method || "get",
+        headers: buildHeaders(url),
+        data: payload || {},
+    });
 
-    return str;
+    return plainToClass(cls, response.data);
 };

@@ -13,7 +13,7 @@ import * as Stats from "./stats";
  */
 export const getLeagues = async (): Promise<Leagues.League[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/leagues`);
-    const response = await requestTransformed(Leagues.Response, url);
+    const response = <Leagues.Response>await requestTransformed(Leagues.Response, url);
     return response.result;
 };
 
@@ -23,7 +23,7 @@ export const getLeagues = async (): Promise<Leagues.League[]> => {
  */
 export const getItems = async (): Promise<Items.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/items`);
-    const response = await requestTransformed(Items.Response, url);
+    const response = <Items.Response>await requestTransformed(Items.Response, url);
     return response.result;
 };
 
@@ -33,7 +33,7 @@ export const getItems = async (): Promise<Items.Group[]> => {
  */
 export const getStats = async (): Promise<Stats.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/stats`);
-    const response = await requestTransformed(Stats.Response, url);
+    const response = <Stats.Response>await requestTransformed(Stats.Response, url);
     return response.result;
 };
 
@@ -43,7 +43,7 @@ export const getStats = async (): Promise<Stats.Group[]> => {
  */
 export const getStatic = async (): Promise<Static.Group[]> => {
     const url = new URL(`https://api.pathofexile.com/trade/data/static`);
-    const response = await requestTransformed(Static.Response, url);
+    const response = <Static.Response>await requestTransformed(Static.Response, url);
     return response.result;
 };
 
@@ -60,7 +60,7 @@ export const getIgnoredAccounts = async (page = 1): Promise<Ignore.Collection> =
     const url = buildURL(`https://api.pathofexile.com/trade/ignore`, null, null, {
         page: page.toString(),
     });
-    return await requestTransformed(Ignore.Collection, url);
+    return <Ignore.Collection>await requestTransformed(Ignore.Collection, url);
 };
 
 /**
@@ -72,10 +72,7 @@ const getSearchResult = async (
     query: Search.QueryContainer
 ): Promise<Search.Result> => {
     const url = new URL(`https://www.pathofexile.com/api/trade/${endpoint}/${league}`);
-
-    const result = await requestTransformed(Search.Result, url, "post", query);
-
-    return result;
+    return <Search.Result>await requestTransformed(Search.Result, url, "post", query);
 };
 
 /**
@@ -116,6 +113,6 @@ export const exchange = async (
 export const getFromHashes = async (hashes: string[]): Promise<Fetch.Result[]> => {
     const hashString = hashes.join(",");
     const url = new URL(`https://api.pathofexile.com/trade/fetch/${hashString}`);
-    const response = await requestTransformed(Fetch.Response, url);
+    const response = <Fetch.Response>await requestTransformed(Fetch.Response, url);
     return response.result;
 };
