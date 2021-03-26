@@ -1,6 +1,6 @@
 {
     "name": "@klayver/poe-api-wrappers",
-    "version": "2.1.0",
+    "version": "2.2.0-beta.1",
     "description": "Wrappers and utilities for official and third-party Path of Exile APIs.",
     "scripts": {
         "build": "tsc",
