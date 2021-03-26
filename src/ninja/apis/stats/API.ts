@@ -6,5 +6,5 @@ import { Stats } from "./Stats";
  */
 export const get = async (): Promise<Stats> => {
     const url = new URL(`https://poe.ninja/api/Data/GetStats`);
-    return await requestTransformed(Stats, url);
+    return <Stats>await requestTransformed(Stats, url);
 };

@@ -20,7 +20,7 @@ export const get = async (
         type,
         language,
     });
-    return await requestTransformed(Collection, url);
+    return <Collection>await requestTransformed(Collection, url);
 };
 
 /**
@@ -40,5 +40,5 @@ export const getHistory = async (
         currencyId: id.toString(),
     });
 
-    return await requestTransformed(History, url);
+    return <History>await requestTransformed(History, url);
 };

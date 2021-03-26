@@ -20,7 +20,7 @@ import { Options } from "./models";
  */
 export const get = async (id: string, options?: Options): Promise<Ladder> => {
     const url = buildURL(`https://api.pathofexile.com/ladders/${id}`, options);
-    const ladder = await requestTransformed(Ladder, url);
+    const ladder = <Ladder>await requestTransformed(Ladder, url);
     ladder.leagueId = id;
 
     if (options) {

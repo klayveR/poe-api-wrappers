@@ -14,7 +14,7 @@ import { StashHistory } from "./StashHistory";
  */
 export const get = async (): Promise<Guild> => {
     const url = new URL(`https://api.pathofexile.com/guild`);
-    return await requestTransformed(Guild, url);
+    return <Guild>await requestTransformed(Guild, url);
 };
 
 /**
@@ -31,7 +31,7 @@ export const getStashHistory = async (
     options?: StashHistoryOptions
 ): Promise<StashHistory> => {
     const url = buildURL(`https://api.pathofexile.com/guild/${guildId}/stash/history`, options);
-    return await requestTransformed(StashHistory, url);
+    return <StashHistory>await requestTransformed(StashHistory, url);
 };
 
 /**
@@ -47,7 +47,7 @@ export const getPointTransactions = async (
     options?: StashHistoryOptions
 ): Promise<PointTransactions> => {
     const url = buildURL(`https://api.pathofexile.com/guild/point-transactions`, options);
-    return await requestTransformed(PointTransactions, url);
+    return <PointTransactions>await requestTransformed(PointTransactions, url);
 };
 
 /**
@@ -63,5 +63,5 @@ export const getAccountPointTransactions = async (
     options?: StashHistoryOptions
 ): Promise<PointTransactions> => {
     const url = buildURL(`https://api.pathofexile.com/account/guild/point-transactions`, options);
-    return await requestTransformed(PointTransactions, url);
+    return <PointTransactions>await requestTransformed(PointTransactions, url);
 };

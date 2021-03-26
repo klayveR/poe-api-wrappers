@@ -19,5 +19,5 @@ export const getMembers = async (id: number, options?: MembersOptions): Promise<
         `https://api.pathofexile.com/private-league-member/${id.toString()}`,
         options
     );
-    return await requestTransformed(Collection, url);
+    return <Collection>await requestTransformed(Collection, url);
 };

@@ -9,6 +9,6 @@ import { Stream } from "./Stream";
  */
 export const get = async (): Promise<Stream[]> => {
     const url = new URL(`https://api.pathofexile.com/streams`);
-    const response = await requestTransformed(Response, url);
+    const response = <Response>await requestTransformed(Response, url);
     return response.streams;
 };

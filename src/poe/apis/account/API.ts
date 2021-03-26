@@ -17,7 +17,7 @@ import { Stash } from "./stash";
 export const getProfile = async (): Promise<Profile> => {
     const url = new URL(`https://api.pathofexile.com/profile`);
 
-    return await requestTransformed(Profile, url);
+    return <Profile>await requestTransformed(Profile, url);
 };
 
 /**
@@ -35,7 +35,7 @@ export const getAvatars = async (options?: AvatarsOptions): Promise<Avatars.Coll
         custom: false,
     });
 
-    const collection = await requestTransformed(Avatars.Collection, url);
+    const collection = <Avatars.Collection>await requestTransformed(Avatars.Collection, url);
 
     if (options) {
         collection.options = options;
@@ -61,7 +61,7 @@ export const getShowcasePins = async (
         account: accountName,
     });
 
-    return await requestTransformed(ShowcasePins.Collection, url);
+    return <ShowcasePins.Collection>await requestTransformed(ShowcasePins.Collection, url);
 };
 
 /**
@@ -88,7 +88,7 @@ export const getStash = async (
         { accountName, league, tabIndex: tabIndex.toString() }
     );
 
-    return await requestTransformed(Stash, url);
+    return <Stash>await requestTransformed(Stash, url);
 };
 
 /**
@@ -104,7 +104,7 @@ export const getNameByCharacter = async (characterName: string): Promise<string>
         { character: characterName }
     );
 
-    const account = await requestTransformed(Name, url);
+    const account = <Name>await requestTransformed(Name, url);
     return account.name;
 };
 
@@ -127,6 +127,6 @@ export const getMicrotransactions = async (
         sortOrder,
     };
 
-    const response = await requestTransformed(MTX.Response, url, "post", payload);
+    const response = <MTX.Response>await requestTransformed(MTX.Response, url, "post", payload);
     return response.groups;
 };
