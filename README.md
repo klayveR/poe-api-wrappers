@@ -116,7 +116,7 @@ for (const currency of collection.entries) {
 
 ## Handling errors
 
-Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the [official developer API documentation](https://th.pathofexile.com/developer/docs/api-errors). Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.
+Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the [official developer API documentation](https://www.pathofexile.com/developer/docs/index#errors). Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.
 
 ```typescript
 try {
