@@ -16,6 +16,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
               with:
+                  token: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
                   fetch-depth: 0
 
             - name: Setup Node.js

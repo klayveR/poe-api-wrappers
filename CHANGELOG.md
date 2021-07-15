@@ -1,3 +1,10 @@
+# [2.2.0-beta.1](https://github.com/klayveR/poe-api-wrappers/compare/v2.1.0...v2.2.0-beta.1) (2021-03-26)
+
+
+### Features
+
+* add response error ([cd7641d](https://github.com/klayveR/poe-api-wrappers/commit/cd7641ddc68547ebecf296c0bb25f8ff7e6de709))
+
 # [2.1.0](https://github.com/klayveR/poe-api-wrappers/compare/v2.0.1...v2.1.0) (2021-03-24)
 
 
