@@ -1,4 +1,4 @@
-import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
+import { buildURL, requestTransformed } from "../../../common/functions";
 import { RealmOptions } from "../../shared/models";
 import { Character } from "./Character";
 import { Items } from "./Items";
@@ -19,12 +19,10 @@ export const get = async (accountName: string, options?: RealmOptions): Promise<
         `https://www.pathofexile.com/character-window/get-characters`,
         options,
         null,
-        {
-            accountName,
-        }
+        { accountName }
     );
 
-    return await requestTransformedArray(Character, url);
+    return <Character[]>await requestTransformed(Character, url);
 };
 
 /**
@@ -47,7 +45,7 @@ export const getItems = async (
         character,
     });
 
-    return await requestTransformed(Items, url);
+    return <Items>await requestTransformed(Items, url);
 };
 
 /**
@@ -72,5 +70,5 @@ export const getPassiveSkills = async (
         { accountName, character }
     );
 
-    return await requestTransformed(PassiveSkills, url);
+    return <PassiveSkills>await requestTransformed(PassiveSkills, url);
 };

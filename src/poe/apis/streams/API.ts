@@ -8,7 +8,7 @@ import { Stream } from "./Stream";
  * @throws [[APIError]]
  */
 export const get = async (): Promise<Stream[]> => {
-    const url = new URL(`https://pathofexile.com/api/streams`);
-    const response = await requestTransformed(Response, url);
+    const url = new URL(`https://www.pathofexile.com/api/streams`);
+    const response = <Response>await requestTransformed(Response, url);
     return response.streams;
 };

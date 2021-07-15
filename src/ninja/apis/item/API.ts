@@ -1,4 +1,4 @@
-import { buildURL, requestTransformed, requestTransformedArray } from "../../../common/functions";
+import { buildURL, requestTransformed } from "../../../common/functions";
 import { HistoryPoint } from "../../shared";
 import { LanguageCode } from "../../shared/models";
 import { ItemType } from "./models";
@@ -20,7 +20,7 @@ export const get = async (
         type,
         language,
     });
-    return await requestTransformed(Collection, url);
+    return <Collection>await requestTransformed(Collection, url);
 };
 
 /**
@@ -40,5 +40,5 @@ export const getHistory = async (
         itemId: id.toString(),
     });
 
-    return await requestTransformedArray(HistoryPoint, url);
+    return <HistoryPoint[]>await requestTransformed(HistoryPoint, url);
 };

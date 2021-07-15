@@ -3,12 +3,15 @@ import { Collection } from "./Collection";
 import { SpecialsOptions } from "./models";
 
 /**
- * @endpoint https://pathofexile.com/api/shop/microtransactions/specials
+ * @endpoint https://www.pathofexile.com/api/shop/microtransactions/specials
  * @param options
  * @throws [[APIError]]
  */
 export const getSpecials = async (options?: SpecialsOptions): Promise<Collection> => {
-    const url = buildURL(`https://pathofexile.com/api/shop/microtransactions/specials`, options);
+    const url = buildURL(
+        `https://www.pathofexile.com/api/shop/microtransactions/specials`,
+        options
+    );
 
-    return await requestTransformed(Collection, url);
+    return <Collection>await requestTransformed(Collection, url);
 };

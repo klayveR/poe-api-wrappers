@@ -14,14 +14,14 @@ import { StashHistory } from "./StashHistory";
  */
 export const get = async (): Promise<Guild> => {
     const url = new URL(`https://www.pathofexile.com/api/guild`);
-    return await requestTransformed(Guild, url);
+    return <Guild>await requestTransformed(Guild, url);
 };
 
 /**
  * @remarks
  * Requires [[Settings.sessionId]] to be set.
  *
- * @endpoint https://www.pathofexile.com/api/guild/<id>/stash/history
+ * @endpoint https://www.pathofexile.com/api/guild/id/stash/history
  * @param guildId
  * @param options
  * @throws [[APIError]]
@@ -31,7 +31,7 @@ export const getStashHistory = async (
     options?: StashHistoryOptions
 ): Promise<StashHistory> => {
     const url = buildURL(`https://www.pathofexile.com/api/guild/${guildId}/stash/history`, options);
-    return await requestTransformed(StashHistory, url);
+    return <StashHistory>await requestTransformed(StashHistory, url);
 };
 
 /**
@@ -47,7 +47,7 @@ export const getPointTransactions = async (
     options?: StashHistoryOptions
 ): Promise<PointTransactions> => {
     const url = buildURL(`https://www.pathofexile.com/api/guild/point-transactions`, options);
-    return await requestTransformed(PointTransactions, url);
+    return <PointTransactions>await requestTransformed(PointTransactions, url);
 };
 
 /**
@@ -66,5 +66,5 @@ export const getAccountPointTransactions = async (
         `https://www.pathofexile.com/api/account/guild/point-transactions`,
         options
     );
-    return await requestTransformed(PointTransactions, url);
+    return <PointTransactions>await requestTransformed(PointTransactions, url);
 };

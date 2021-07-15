@@ -9,7 +9,7 @@ import { MembersOptions } from "./models";
  * @remarks
  * The account tied to the provided session id must be part of the private league.
  *
- * @endpoint https://www.pathofexile.com/api/private-league-member/<id>
+ * @endpoint https://www.pathofexile.com/api/private-league-member/id
  * @param id ID of the private league without `PL` prefix
  * @param options
  * @throws [[APIError]]
@@ -19,5 +19,5 @@ export const getMembers = async (id: number, options?: MembersOptions): Promise<
         `https://www.pathofexile.com/api/private-league-member/${id.toString()}`,
         options
     );
-    return await requestTransformed(Collection, url);
+    return <Collection>await requestTransformed(Collection, url);
 };
