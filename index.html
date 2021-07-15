@@ -165,7 +165,7 @@
 				<a href="#handling-errors" id="handling-errors" style="color: inherit; text-decoration: none;">
 					<h2>Handling errors</h2>
 				</a>
-				<p>Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the <a href="https://th.pathofexile.com/developer/docs/api-errors">official developer API documentation</a>. Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.</p>
+				<p>Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the <a href="https://www.pathofexile.com/developer/docs/index#errors">official developer API documentation</a>. Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.</p>
 				<pre><code class="language-typescript"><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
 <span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">PathOfExile</span><span style="color: #000000">.</span><span style="color: #001080">Account</span><span style="color: #000000">.</span><span style="color: #795E26">getProfile</span><span style="color: #000000">();</span>
 <span style="color: #000000">} </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">: </span><span style="color: #267F99">unknown</span><span style="color: #000000">) {</span>
