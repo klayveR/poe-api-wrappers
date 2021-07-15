@@ -8,7 +8,7 @@ import { PassiveSkills } from "./PassiveSkills";
  * @remarks
  * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
  *
- * @endpoint https://api.pathofexile.com/character-window/get-characters
+ * @endpoint https://www.pathofexile.com/character-window/get-characters
  * @param accountName
  * @param options
  * @returns A list of characters of an account
@@ -16,10 +16,12 @@ import { PassiveSkills } from "./PassiveSkills";
  */
 export const get = async (accountName: string, options?: RealmOptions): Promise<Character[]> => {
     const url = buildURL(
-        `https://api.pathofexile.com/character-window/get-characters`,
+        `https://www.pathofexile.com/character-window/get-characters`,
         options,
         null,
-        { accountName }
+        {
+            accountName,
+        }
     );
 
     return await requestTransformedArray(Character, url);
@@ -29,7 +31,7 @@ export const get = async (accountName: string, options?: RealmOptions): Promise<
  * @remarks
  * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
  *
- * @endpoint https://api.pathofexile.com/character-window/get-items
+ * @endpoint https://www.pathofexile.com/character-window/get-items
  * @param accountName
  * @param character
  * @param options
@@ -40,7 +42,7 @@ export const getItems = async (
     character: string,
     options?: RealmOptions
 ): Promise<Items> => {
-    const url = buildURL(`https://api.pathofexile.com/character-window/get-items`, options, null, {
+    const url = buildURL(`https://www.pathofexile.com/character-window/get-items`, options, null, {
         accountName,
         character,
     });
@@ -52,7 +54,7 @@ export const getItems = async (
  * @remarks
  * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
  *
- * @endpoint https://api.pathofexile.com/character-window/get-passive-skills
+ * @endpoint https://www.pathofexile.com/character-window/get-passive-skills
  * @param accountName
  * @param character
  * @param options
@@ -64,7 +66,7 @@ export const getPassiveSkills = async (
     options?: RealmOptions
 ): Promise<PassiveSkills> => {
     const url = buildURL(
-        `https://api.pathofexile.com/character-window/get-passive-skills`,
+        `https://www.pathofexile.com/character-window/get-passive-skills`,
         options,
         null,
         { accountName, character }

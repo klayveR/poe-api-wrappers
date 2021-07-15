@@ -4,13 +4,13 @@ import { PlayerHistory } from "./PlayerHistory";
 import { Season } from "./Season";
 
 /**
- * @endpoint https://api.pathofexile.com/seasons
+ * @endpoint https://www.pathofexile.com/api/seasons
  * @param options
  * @returns A list of all seasons
  * @throws [[APIError]]
  */
 export const get = async (options?: SeasonOptions): Promise<Season[]> => {
-    const url = buildURL(`https://api.pathofexile.com/seasons`, options);
+    const url = buildURL(`https://www.pathofexile.com/api/seasons`, options);
     return await requestTransformedArray(Season, url);
 };
 
@@ -18,7 +18,7 @@ export const get = async (options?: SeasonOptions): Promise<Season[]> => {
  * @remarks
  * This data is available even if the profile of the account is set to private
  *
- * @endpoint https://api.pathofexile.com/season-player-history
+ * @endpoint https://www.pathofexile.com/api/season-player-history
  * @param seasonId
  * @param accountName
  * @param options
@@ -29,7 +29,7 @@ export const getPlayerHistory = async (
     accountName: string,
     options?: PlayerHistoryOptions
 ): Promise<PlayerHistory> => {
-    const url = buildURL(`https://api.pathofexile.com/season-player-history`, options, null, {
+    const url = buildURL(`https://www.pathofexile.com/api/season-player-history`, options, null, {
         seasonId,
         id: accountName,
     });

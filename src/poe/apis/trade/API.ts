@@ -8,41 +8,41 @@ import * as Static from "./static";
 import * as Stats from "./stats";
 
 /**
- * @endpoint https://api.pathofexile.com/trade/data/leagues
+ * @endpoint https://www.pathofexile.com/api/trade/data/leagues
  * @throws [[APIError]]
  */
 export const getLeagues = async (): Promise<Leagues.League[]> => {
-    const url = new URL(`https://api.pathofexile.com/trade/data/leagues`);
+    const url = new URL(`https://www.pathofexile.com/api/trade/data/leagues`);
     const response = await requestTransformed(Leagues.Response, url);
     return response.result;
 };
 
 /**
- * @endpoint https://api.pathofexile.com/trade/data/items
+ * @endpoint https://www.pathofexile.com/api/trade/data/items
  * @throws [[APIError]]
  */
 export const getItems = async (): Promise<Items.Group[]> => {
-    const url = new URL(`https://api.pathofexile.com/trade/data/items`);
+    const url = new URL(`https://www.pathofexile.com/api/trade/data/items`);
     const response = await requestTransformed(Items.Response, url);
     return response.result;
 };
 
 /**
- * @endpoint https://api.pathofexile.com/trade/data/stats
+ * @endpoint https://www.pathofexile.com/api/trade/data/stats
  * @throws [[APIError]]
  */
 export const getStats = async (): Promise<Stats.Group[]> => {
-    const url = new URL(`https://api.pathofexile.com/trade/data/stats`);
+    const url = new URL(`https://www.pathofexile.com/api/trade/data/stats`);
     const response = await requestTransformed(Stats.Response, url);
     return response.result;
 };
 
 /**
- * @endpoint https://api.pathofexile.com/trade/data/static
+ * @endpoint https://www.pathofexile.com/api/trade/data/static
  * @throws [[APIError]]
  */
 export const getStatic = async (): Promise<Static.Group[]> => {
-    const url = new URL(`https://api.pathofexile.com/trade/data/static`);
+    const url = new URL(`https://www.pathofexile.com/api/trade/data/static`);
     const response = await requestTransformed(Static.Response, url);
     return response.result;
 };
@@ -51,13 +51,13 @@ export const getStatic = async (): Promise<Static.Group[]> => {
  * @remarks
  * Requires [[Settings.sessionId]] to be set.
  *
- * @endpoint https://api.pathofexile.com/trade/ignore
+ * @endpoint https://www.pathofexile.com/api/trade/ignore
  * @param page Between `1` and `10`, will default to `1` if out of range
  * @returns A list of up to 50 ignored accounts
  * @throws [[APIError]]
  */
 export const getIgnoredAccounts = async (page = 1): Promise<Ignore.Collection> => {
-    const url = buildURL(`https://api.pathofexile.com/trade/ignore`, null, null, {
+    const url = buildURL(`https://www.pathofexile.com/api/trade/ignore`, null, null, {
         page: page.toString(),
     });
     return await requestTransformed(Ignore.Collection, url);
@@ -109,13 +109,13 @@ export const exchange = async (
 };
 
 /**
- * @endpoint https://api.pathofexile.com/trade/fetch
+ * @endpoint https://www.pathofexile.com/api/trade/fetch
  * @param hashes
  * @throws [[APIError]]
  */
 export const getFromHashes = async (hashes: string[]): Promise<Fetch.Result[]> => {
     const hashString = hashes.join(",");
-    const url = new URL(`https://api.pathofexile.com/trade/fetch/${hashString}`);
+    const url = new URL(`https://www.pathofexile.com/api/trade/fetch/${hashString}`);
     const response = await requestTransformed(Fetch.Response, url);
     return response.result;
 };

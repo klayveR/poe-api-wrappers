@@ -11,12 +11,12 @@ import { Rule } from "./Rule";
  * const data = await PathOfExile.Leagues.get({ type: "main", realm: "sony" });
  * ```
  *
- * @endpoint https://api.pathofexile.com/leagues
+ * @endpoint https://www.pathofexile.com/api/leagues
  * @param options
  * @throws [[APIError]]
  */
 export const get = async (options?: ListOptions): Promise<League[]> => {
-    const url = buildURL(`https://api.pathofexile.com/leagues`, options);
+    const url = buildURL(`https://www.pathofexile.com/api/leagues`, options);
     return await requestTransformedArray(League, url);
 };
 
@@ -28,31 +28,31 @@ export const get = async (options?: ListOptions): Promise<League[]> => {
  * const data = await PathOfExile.Leagues.getById("Metamorph", { ladder: 1, limit: 100 });
  * ```
  *
- * @endpoint https://api.pathofexile.com/leagues/id
+ * @endpoint https://www.pathofexile.com/api/leagues/id
  * @param id
  * @param options
  * @throws [[APIError]]
  */
 export const getById = async (id: string, options?: LeagueOptions): Promise<League> => {
-    const url = buildURL(`https://api.pathofexile.com/leagues/${id}`, options);
+    const url = buildURL(`https://www.pathofexile.com/api/leagues/${id}`, options);
     return await requestTransformed(League, url);
 };
 
 /**
- * @endpoint http://api.pathofexile.com/league-rules
+ * @endpoint https://www.pathofexile.com/api/league-rules
  * @throws [[APIError]]
  */
 export const getRules = async (): Promise<Rule[]> => {
-    const url = buildURL(`http://api.pathofexile.com/league-rules`);
+    const url = buildURL(`https://www.pathofexile.com/api/league-rules`);
     return await requestTransformedArray(Rule, url);
 };
 
 /**
- * @endpoint http://api.pathofexile.com/league-rules/id
+ * @endpoint https://www.pathofexile.com/api/league-rules/id
  * @param id
  * @throws [[APIError]]
  */
 export const getRuleById = async (id: string): Promise<Rule> => {
-    const url = buildURL(`http://api.pathofexile.com/league-rules/${id}`);
+    const url = buildURL(`https://www.pathofexile.com/api/league-rules/${id}`);
     return await requestTransformed(Rule, url);
 };

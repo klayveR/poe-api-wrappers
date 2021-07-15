@@ -11,11 +11,11 @@ import { Stash } from "./stash";
  * @remarks
  * Requires [[Settings.sessionId]] to be set.
  *
- * @endpoint https://api.pathofexile.com/profile
+ * @endpoint https://www.pathofexile.com/api/profile
  * @throws [[APIError]]
  */
 export const getProfile = async (): Promise<Profile> => {
-    const url = new URL(`https://api.pathofexile.com/profile`);
+    const url = new URL(`https://www.pathofexile.com/api/profile`);
 
     return await requestTransformed(Profile, url);
 };
@@ -24,12 +24,12 @@ export const getProfile = async (): Promise<Profile> => {
  * @remarks
  * Requires [[Settings.sessionId]] to be set.
  *
- * @endpoint https://api.pathofexile.com/account-avatar
+ * @endpoint https://pathofexile.com/api/account-avatar
  * @param options
  * @throws [[APIError]]
  */
 export const getAvatars = async (options?: AvatarsOptions): Promise<Avatars.Collection> => {
-    const url = buildURL(`https://api.pathofexile.com/account-avatar`, options, {
+    const url = buildURL(`https://www.pathofexile.com/api/account-avatar`, options, {
         page: 1,
         perPage: 16,
         custom: false,
@@ -48,7 +48,7 @@ export const getAvatars = async (options?: AvatarsOptions): Promise<Avatars.Coll
  * @remarks
  * This data is available even if the profile of the account is set to private
  *
- * @endpoint https://api.pathofexile.com/account/showcase-pins
+ * @endpoint https://www.pathofexile.com/api/account/showcase-pins
  * @param accountName
  * @param options
  * @throws [[APIError]]
@@ -57,7 +57,7 @@ export const getShowcasePins = async (
     accountName: string,
     options?: ShowcasePinOptions
 ): Promise<ShowcasePins.Collection> => {
-    const url = buildURL(`https://api.pathofexile.com/account/showcase-pins`, options, null, {
+    const url = buildURL(`https://www.pathofexile.com/api/account/showcase-pins`, options, null, {
         account: accountName,
     });
 
@@ -68,7 +68,7 @@ export const getShowcasePins = async (
  * @remarks
  * Requires [[Settings.sessionId]] to be set.
  *
- * @endpoint https://api.pathofexile.com/character-window/get-stash-items
+ * @endpoint https://www.pathofexile.com/character-window/get-stash-items
  * @param accountName
  * @param league
  * @param tabIndex
@@ -82,7 +82,7 @@ export const getStash = async (
     options?: StashOptions
 ): Promise<Stash> => {
     const url = buildURL(
-        `https://api.pathofexile.com/character-window/get-stash-items`,
+        `https://www.pathofexile.com/character-window/get-stash-items`,
         options,
         null,
         { accountName, league, tabIndex: tabIndex.toString() }
@@ -92,13 +92,13 @@ export const getStash = async (
 };
 
 /**
- * @endpoint https://api.pathofexile.com/character-window/get-account-name-by-character
+ * @endpoint https://pathofexile.com/character-window/get-account-name-by-character
  * @param characterName
  * @throws [[APIError]]
  */
 export const getNameByCharacter = async (characterName: string): Promise<string> => {
     const url = buildURL(
-        `https://api.pathofexile.com/character-window/get-account-name-by-character`,
+        `https://pathofexile.com/character-window/get-account-name-by-character`,
         null,
         null,
         { character: characterName }
@@ -112,7 +112,7 @@ export const getNameByCharacter = async (characterName: string): Promise<string>
  * @remarks
  * Requires [[Settings.sessionId]] to be set.
  *
- * @endpoint https://api.pathofexile.com/character-window/get-mtx-stash-items
+ * @endpoint https://pathofexile.com/character-window/get-mtx-stash-items
  * @param accountName
  * @param options
  * @throws [[APIError]]
@@ -121,7 +121,7 @@ export const getMicrotransactions = async (
     accountName: string,
     sortOrder: "category" | "theme" = "category"
 ): Promise<MTX.Group[]> => {
-    const url = buildURL(`https://api.pathofexile.com/character-window/get-mtx-stash-items`);
+    const url = buildURL(`https://pathofexile.com/character-window/get-mtx-stash-items`);
     const payload = {
         accountName,
         sortOrder,

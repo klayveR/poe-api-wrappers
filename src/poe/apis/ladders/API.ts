@@ -13,13 +13,13 @@ import { Options } from "./models";
  * const ladder = await PathOfExile.Ladders.get("SSF Standard", { limit: 200, track: 1 });
  * ```
  *
- * @endpoint https://api.pathofexile.com/ladders/id
+ * @endpoint https://www.pathofexile.com/api/ladders/id
  * @param id
  * @param options
  * @throws [[APIError]]
  */
 export const get = async (id: string, options?: Options): Promise<Ladder> => {
-    const url = buildURL(`https://api.pathofexile.com/ladders/${id}`, options);
+    const url = buildURL(`https://www.pathofexile.com/api/ladders/${id}`, options);
     const ladder = await requestTransformed(Ladder, url);
     ladder.leagueId = id;
 
