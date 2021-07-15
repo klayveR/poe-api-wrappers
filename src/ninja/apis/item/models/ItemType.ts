@@ -21,4 +21,5 @@ export type ItemType =
     | "UniqueArmour"
     | "UniqueAccessory"
     | "Beast"
-    | "Vial";
+    | "Vial"
+    | "ClusterJewel";
