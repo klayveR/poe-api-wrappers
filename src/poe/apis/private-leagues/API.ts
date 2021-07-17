@@ -4,7 +4,7 @@ import { MembersOptions } from "./models";
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @remarks
  * The account tied to the provided session id must be part of the private league.

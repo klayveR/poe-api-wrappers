@@ -1,14 +1,10 @@
 import { URL } from "url";
 
-interface Parameters {
-    [key: string]: string;
-}
-
 export function buildURL<T>(
     url: string,
     optionalParameters?: T,
     defaults?: T,
-    additionalParameters?: Parameters
+    additionalParameters?: Record<string, string>
 ): URL {
     const urlObj: URL = new URL(url);
 

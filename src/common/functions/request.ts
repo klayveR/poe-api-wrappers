@@ -32,17 +32,25 @@ const axiosInstance: AxiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(onResponse, onResponseError);
 
-export const buildHeaders = (url: URL): Record<string, string> => {
+const buildHeaders = (url: URL): Record<string, string> => {
+    if (url.host.includes("pathofexile.com")) {
+        return buildPathOfExileHeaders(url);
+    }
+
+    return {};
+};
+
+const buildPathOfExileHeaders = (url: URL): Record<string, string> => {
     const headers: Record<string, string> = {};
 
-    if (url.host.includes("pathofexile.com")) {
-        if (Settings.sessionId != null) {
-            headers["Cookie"] = `POESESSID=${Settings.sessionId}`;
-        }
+    if (Settings.userAgent != null) {
+        headers["User-Agent"] = Settings.userAgent;
+    }
 
-        if (Settings.userAgent != null) {
-            headers["User-Agent"] = Settings.userAgent;
-        }
+    if (url.host.includes("api.pathofexile.com") && Settings.accessToken != null) {
+        headers["Authorization"] = `Bearer ${Settings.accessToken}`;
+    } else if (Settings.sessionId != null) {
+        headers["Cookie"] = `POESESSID=${Settings.sessionId}`;
     }
 
     return headers;

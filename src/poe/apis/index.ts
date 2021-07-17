@@ -8,4 +8,5 @@ export * as Guild from "./guild";
 export * as Seasons from "./seasons";
 export * as Account from "./account";
 export * as MTX from "./mtx";
+export * as OAuth from "./oauth";
 export * as PublicStashTabs from "./public-stash-tabs";

@@ -9,7 +9,7 @@ import { Stash } from "./stash";
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/profile
  * @throws [[APIError]]
@@ -22,7 +22,7 @@ export const getProfile = async (): Promise<Profile> => {
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/account-avatar
  * @param options
@@ -66,7 +66,7 @@ export const getShowcasePins = async (
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/character-window/get-stash-items
  * @param accountName
@@ -110,7 +110,7 @@ export const getNameByCharacter = async (characterName: string): Promise<string>
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/character-window/get-mtx-stash-items
  * @param accountName

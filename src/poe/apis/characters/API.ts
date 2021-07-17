@@ -6,7 +6,7 @@ import { PassiveSkills } from "./PassiveSkills";
 
 /**
  * @remarks
- * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
+ * Requires [[Settings.setAuthorization | Authorization]] if profile or character tab is private
  *
  * @endpoint https://www.pathofexile.com/character-window/get-characters
  * @param accountName
@@ -27,7 +27,7 @@ export const get = async (accountName: string, options?: RealmOptions): Promise<
 
 /**
  * @remarks
- * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
+ * Requires [[Settings.setAuthorization | Authorization]] if profile or character tab is private
  *
  * @endpoint https://www.pathofexile.com/character-window/get-items
  * @param accountName
@@ -50,7 +50,7 @@ export const getItems = async (
 
 /**
  * @remarks
- * Requires `sessionId` to be set in [[Settings]] if profile or character tab is private.
+ * Requires [[Settings.setAuthorization | Authorization]] if profile or character tab is private
  *
  * @endpoint https://www.pathofexile.com/character-window/get-passive-skills
  * @param accountName

@@ -6,7 +6,7 @@ import { StashHistory } from "./StashHistory";
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/guild
  * @returns Guild data of the account the session ID belongs to
@@ -19,7 +19,7 @@ export const get = async (): Promise<Guild> => {
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/guild/id/stash/history
  * @param guildId
@@ -36,7 +36,7 @@ export const getStashHistory = async (
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/guild/point-transactions
  * @param options
@@ -52,7 +52,7 @@ export const getPointTransactions = async (
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/account/guild/point-transactions
  * @param options

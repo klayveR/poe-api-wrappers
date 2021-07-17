@@ -20,34 +20,55 @@ $ npm i @klayver/poe-api-wrappers --save
 
 Please refer to [CONTRIBUTING.md](https://github.com/klayveR/poe-api-wrappers/blob/main/CONTRIBUTING.md).
 
-# Examples
+# Path of Exile API
 
-> ⚠️ The following examples do not handle errors to keep it simple. You should wrap your calls in a try/catch block or do whatever you do to catch errors (see [Handling errors](#handling-errors)).
-
-## Path of Exile API
-
-> Many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.
-
-### Setup
+## Setup
 
 ```typescript
 import { PathOfExile } from "@klayver/poe-api-wrappers";
 
-// Alternatively, import specific Path of Exile API endpoints
+// Alternatively, you can also import specific endpoints directly
 import { Ladders, Leagues } from "@klayver/poe-api-wrappers/poe";
 ```
 
-Before making requests to the official API, you should set your user agent, as requested by GGG [here](https://www.pathofexile.com/forum/view-thread/3019033/page/1#p23790007).
+Before you can start making requests to the official API, you must set your user agent. This is a requirement by Grinding Gear Games. If you skip this step, making requests will most likely result in an error.
 
 ```typescript
-PathOfExile.Settings.userAgent = "my-awesome-tool-name, contact@me.com";
+PathOfExile.Settings.setUserAgent("myapp", "1.0.0", "contact@me.com");
 ```
 
-You can also define a session ID, which will be used in every request you make. Some endpoints require the session ID to be defined (see documentation).
+## Authorization
+
+Some API endpoints are protected and require authorization. You can supply a session ID and/or an official OAuth 2 access token.
+
+As of right now, some endpoints may only be accessible using one or the other authorization method. For example, the item filter endpoint only works with OAuth 2 and the account avatars endpoint only works with a session ID. You can find out which authorization method is supported by an endpoint in the [documentation](https://klayver.github.io/poe-api-wrappers/) of this module. In case both authorization methods are available and an access token has been set, OAuth 2 will be used.
+
+This module offers basic functionality to generate an authorization URL and create access tokens. More information, including examples, can be found in the [OAuth module documentation](https://klayver.github.io/poe-api-wrappers/modules/pathofexile.oauth.html). Check out the [official developer API](https://www.pathofexile.com/developer/docs/index#gettingstarted) to learn how to get access to OAuth 2.
 
 ```typescript
-PathOfExile.Settings.sessionId = "y0uRs3ss10n1dh3r3";
+PathOfExile.Settings.sessionId = "mys3ss10n1d";
+PathOfExile.Settings.accessToken = "my4cc3sst0k3n";
 ```
+
+## Handling errors
+
+Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the [official developer API documentation](https://www.pathofexile.com/developer/docs/index#errors). Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.
+
+```typescript
+try {
+    await PathOfExile.Account.getProfile();
+} catch (error: unknown) {
+    if (error instanceof PathOfExile.APIError) {
+        console.log(`Request failed with code ${error.code}: ${error.message}`);
+    }
+
+    // Handle other errors...
+}
+```
+
+## Examples
+
+> ⚠️ Many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.
 
 ### Get 10 public stash tab chunks and do something with them
 
@@ -99,13 +120,15 @@ if (results != null) {
 }
 ```
 
-## poe.ninja API
+# poe.ninja API
 
-### Setup
+## Setup
 
 ```typescript
 import { Ninja } from "@klayver/poe-api-wrappers";
 ```
+
+## Examples
 
 ### Get currency exchange rates for currency items in Standard league
 
@@ -114,21 +137,5 @@ const collection = await Ninja.Currency.get("Standard", "Currency");
 
 for (const currency of collection.entries) {
     console.log(`${currency.name} costs ${currency.chaosEquivalent} Chaos Orb`);
-}
-```
-
-## Handling errors
-
-Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the [official developer API documentation](https://www.pathofexile.com/developer/docs/index#errors). Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.
-
-```typescript
-try {
-    await PathOfExile.Account.getProfile();
-} catch (error: unknown) {
-    if (error instanceof PathOfExile.APIError) {
-        console.log(`Request failed with code ${error.code}: ${error.message}`);
-    }
-
-    // Handle other errors...
 }
 ```

@@ -49,7 +49,7 @@ export const getStatic = async (): Promise<Static.Group[]> => {
 
 /**
  * @remarks
- * Requires [[Settings.sessionId]] to be set.
+ * Requires [[Settings.setAuthorization | Authorization]]
  *
  * @endpoint https://www.pathofexile.com/api/trade/ignore
  * @param page Between `1` and `10`, will default to `1` if out of range
