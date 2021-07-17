@@ -32,6 +32,9 @@ Please refer to [CONTRIBUTING.md](https://github.com/klayveR/poe-api-wrappers/bl
 
 ```typescript
 import { PathOfExile } from "@klayver/poe-api-wrappers";
+
+// Alternatively, import specific Path of Exile API endpoints
+import { Ladders, Leagues } from "@klayver/poe-api-wrappers/poe";
 ```
 
 Before making requests to the official API, you should set your user agent, as requested by GGG [here](https://www.pathofexile.com/forum/view-thread/3019033/page/1#p23790007).
