@@ -3,7 +3,7 @@ import "reflect-metadata";
 import chai from "chai";
 import chaiAsPromised from "chai-as-promised";
 
-import * as PathOfExile from "./poe";
+import * as PathOfExile from "../poe";
 
 export function mochaGlobalSetup(): void {
     chai.use(chaiAsPromised);

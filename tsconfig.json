@@ -13,13 +13,6 @@
         "moduleResolution": "node",
         "esModuleInterop": true
     },
-    "exclude": [
-        "docs",
-        "test",
-        "node_modules",
-        "dist",
-        "src/mochaFixtures.ts",
-        "src/playground.ts"
-    ],
+    "exclude": ["docs", "test", "node_modules", "dist", "src/spec/setup.ts", "src/playground.ts"],
     "include": ["src/**/*.ts"]
 }
