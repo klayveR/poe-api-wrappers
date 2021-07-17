@@ -7,19 +7,20 @@ import { Rule } from "./Rule";
 
 export class League extends Transformable {
     id!: string;
-    realm!: Realm;
-    url!: string;
-    delveEvent!: boolean;
-
+    realm?: Realm;
     description?: string;
+    url?: string;
+
+    delveEvent?: boolean;
     timedEvent?: boolean;
     scoreEvent?: boolean;
+    event?: boolean;
 
     @Type(/* istanbul ignore next */ () => Date)
-    startAt!: Date;
+    startAt?: Date;
 
     @Type(/* istanbul ignore next */ () => Date)
-    endAt!: Date | null;
+    endAt?: Date | null;
 
     @Type(/* istanbul ignore next */ () => Date)
     registerAt?: Date;

@@ -1,6 +1,6 @@
 export class Settings {
-    public static accessToken: string;
-    public static sessionId: string;
+    public static accessToken: string | undefined;
+    public static sessionId: string | undefined;
 
     private static _userAgent: string;
 
