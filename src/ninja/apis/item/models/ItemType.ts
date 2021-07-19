@@ -22,4 +22,5 @@ export type ItemType =
     | "UniqueAccessory"
     | "Beast"
     | "Vial"
-    | "ClusterJewel";
+    | "ClusterJewel"
+    | "BlightedMap";
