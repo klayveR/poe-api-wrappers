@@ -1,15 +1,14 @@
+// eslint-disable-next-line no-undef
 module.exports = {
-    extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "prettier",
-    ],
+    root: true,
     parser: "@typescript-eslint/parser",
-    ignorePatterns: [".eslintrc.js"],
     parserOptions: {
-        project: "./tsconfig.eslint.json",
+        ecmaVersion: 2020,
+        sourceType: "module",
     },
-    plugins: ["@typescript-eslint"],
+    plugins: ["@typescript-eslint", "prettier"],
+    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+    rules: {
+        "prettier/prettier": "error",
+    },
 };

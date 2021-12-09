@@ -40,6 +40,4 @@ jobs:
               run: npm ci
 
             - name: Run unit tests
-              env:
-                  POESESSID: ${{ secrets.POESESSID }}
-              run: env POESESSID=$POESESSID npm run test:ci
+              run: npm run test

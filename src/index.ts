@@ -1,4 +1,5 @@
 import "reflect-metadata";
 
-export * as PathOfExile from "./poe";
-export * as Ninja from "./ninja";
+export { PathOfExileWrapper } from "@/poe/PathOfExileWrapper";
+export { PathOfExileOAuthWrapper } from "@/poe/PathOfExileOAuthWrapper";
+export { NinjaWrapper } from "@/poe-ninja/NinjaWrapper";

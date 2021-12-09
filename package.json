@@ -1,16 +1,18 @@
 {
     "name": "@klayver/poe-api-wrappers",
     "version": "2.1.0",
-    "description": "Wrappers and utilities for official and third-party Path of Exile APIs.",
+    "description": "Wrappers and utilities for official and third-party Path of Exile APIs",
+    "main": "dist/index.js",
+    "private": true,
     "scripts": {
-        "build": "tsc",
+        "start": "ts-node -r tsconfig-paths/register ./src/scuffedtest.ts",
+        "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
         "build:docs": "typedoc",
-        "test": "dotenv -e .env mocha",
-        "test:ci": "mocha",
-        "test:coverage": "dotenv -e .env nyc mocha",
-        "lint": "eslint src/",
-        "lint:fix": "eslint --fix src/",
-        "prettier": "prettier --write \"**/*.ts\""
+        "test": "mocha",
+        "test:coverage": "nyc mocha",
+        "lint": "eslint --ext .ts",
+        "lint:fix": "eslint --ext .ts --fix",
+        "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
     },
     "keywords": [
         "pathofexile",
@@ -23,7 +25,6 @@
         "email": "tobiashoffmann7@gmail.com",
         "url": "http://github.com/klayver"
     },
-    "main": "dist/index.js",
     "files": [
         "dist/**"
     ],
@@ -33,38 +34,38 @@
     "repository": "git://github.com/klayveR/poe-api-wrappers.git",
     "license": "MIT",
     "devDependencies": {
-        "@istanbuljs/nyc-config-typescript": "^1.0.1",
-        "@semantic-release/changelog": "^5.0.1",
-        "@semantic-release/commit-analyzer": "^8.0.1",
-        "@semantic-release/git": "^9.0.0",
-        "@semantic-release/npm": "^7.0.10",
-        "@semantic-release/release-notes-generator": "^9.0.2",
-        "@types/chai": "^4.2.15",
-        "@types/chai-as-promised": "^7.1.3",
-        "@types/glob": "^7.1.3",
-        "@types/mocha": "^8.2.1",
-        "@types/node": "^14.14.35",
-        "@typescript-eslint/eslint-plugin": "^4.18.0",
-        "@typescript-eslint/parser": "^4.18.0",
+        "@benyap/tscpaths": "^0.1.2",
+        "@istanbuljs/nyc-config-typescript": "^1.0.2",
+        "@semantic-release/changelog": "^6.0.1",
+        "@semantic-release/commit-analyzer": "^9.0.2",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/npm": "^8.0.3",
+        "@semantic-release/release-notes-generator": "^10.0.3",
+        "@types/chai": "^4.3.0",
+        "@types/chai-as-promised": "^7.1.4",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "^16.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.6.0",
+        "@typescript-eslint/parser": "^5.6.0",
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
         "conventional-changelog-eslint": "^3.0.9",
-        "dotenv-cli": "^4.0.0",
-        "eslint": "^7.22.0",
-        "eslint-config-prettier": "^8.1.0",
-        "mocha": "^8.3.2",
+        "eslint": "^8.4.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "mocha": "^9.1.3",
         "nyc": "^15.1.0",
-        "prettier": "^2.2.1",
-        "replace-json-property": "^1.6.3",
-        "semantic-release": "^17.4.2",
-        "source-map-support": "^0.5.19",
-        "ts-node": "^9.1.1",
-        "typedoc": "^0.20.33",
-        "typescript": "^4.2.3"
+        "prettier": "2.5.1",
+        "semantic-release": "^18.0.1",
+        "ts-node": "^10.4.0",
+        "tsconfig-paths": "^3.12.0",
+        "typedoc": "^0.22.10",
+        "typescript": "^4.5.2"
     },
     "dependencies": {
-        "axios": "^0.21.1",
-        "class-transformer": "^0.4.0",
+        "axios": "^0.24.0",
+        "class-transformer": "^0.5.1",
         "reflect-metadata": "^0.1.13"
     },
     "nyc": {
@@ -105,7 +106,7 @@
             [
                 "@semantic-release/git",
                 {
-                    "message": "Release <%= nextRelease.version %> [skip ci]",
+                    "message": "release: <%= nextRelease.version %> [skip ci]\n\n${nextRelease.notes}",
                     "assets": [
                         "package.json",
                         "CHANGELOG.md"

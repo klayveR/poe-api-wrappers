@@ -1,8 +1,12 @@
 {
-    "entryPoints": ["./src/index.ts"],
+    "entryPoints": ["./src/docsIndex.ts"],
     "exclude": ["**/*+(.spec|.e2e).ts"],
     "out": "docs",
     "tsconfig": "tsconfig.json",
+    "name": "Path of Exile API Wrappers",
     "excludePrivate": true,
-    "disableSources": true
+    "excludeProtected": true,
+    "excludeInternal": true,
+    "disableSources": true,
+    "includeVersion": true
 }

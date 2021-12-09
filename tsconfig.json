@@ -1,25 +1,23 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "allowJs": true,
-        "module": "commonjs",
-        "target": "es6",
-        "declaration": true,
         "experimentalDecorators": true,
-        "resolveJsonModule": true,
-        "strict": true,
+        "target": "es5",
+        "module": "commonjs",
+        "rootDir": "./src",
         "moduleResolution": "node",
-        "esModuleInterop": true
-    },
-    "exclude": [
-        "docs",
-        "test",
-        "node_modules",
-        "dist",
-        "src/mochaFixtures.ts",
-        "src/playground.ts"
-    ],
-    "include": ["src/**/*.ts"]
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@/poe/*": ["./src/wrappers/poe/*"],
+            "@/poe-ninja/*": ["src/wrappers/poe-ninja/*"]
+        },
+        "declaration": true,
+        "outDir": "./dist",
+        "removeComments": true,
+        "newLine": "lf",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    }
 }

@@ -8,7 +8,24 @@ Please check out the [documentation](https://klayver.github.io/poe-api-wrappers/
 
 Since there are so many APIs with varying response structures, things may be incorrect or missing. If you notice something that needs to be added or fixed, please submit an [issue](https://github.com/klayveR/poe-api-wrappers/issues).
 
-# Getting started
+# Contributing
+
+Please refer to [CONTRIBUTING.md](https://github.com/klayveR/poe-api-wrappers/blob/main/CONTRIBUTING.md).
+
+# Table of contents
+
+-   [Installation](#installation)
+-   [Path of Exile Wrapper](#path-of-exile-wrapper)
+    -   [Usage](#usage)
+        -   [Default instance](#default-instance)
+        -   [Setting the user agent](#setting-the-user-agent)
+    -   [Example usage](#example-usage)
+        -   [Requesting data on wrapper instance](#requesting-data-on-wrapper-instance)
+        -   [Requesting associated data on response objects](#requesting-associated-data-on-response-objects)
+-   [Path of Exile OAuth Wrapper](#path-of-exile-oauth-wrapper)
+-   [poe.ninja Wrapper](#poeninja-wrapper)
+
+# Installation
 
 **Install with npm:**
 
@@ -16,116 +33,86 @@ Since there are so many APIs with varying response structures, things may be inc
 $ npm i @klayver/poe-api-wrappers --save
 ```
 
-# Contributing
+# Path of Exile Wrapper
 
-Please refer to [CONTRIBUTING.md](https://github.com/klayveR/poe-api-wrappers/blob/main/CONTRIBUTING.md).
+The endpoints used in this wrapper are not officially supported by Grinding Gear Games. They may be changed, restricted or removed at any time. When possible, you should be using the [OAuth wrapper](#path-of-exile-oauth-wrapper), which uses officially supported endpoints.
 
-# Examples
+Some request options are intentionally not included, such as the `compact` option when fetching a list of leagues.
 
-> ⚠️ The following examples do not handle errors to keep it simple. You should wrap your calls in a try/catch block or do whatever you do to catch errors (see [Handling errors](#handling-errors)).
-
-## Path of Exile API
-
-> Many APIs are rate limited, so if you want to hit an API often in a short timeframe, consider implementing logic to comply with rate limits.
-
-### Setup
+## Usage
 
 ```typescript
-import { PathOfExile } from "@klayver/poe-api-wrappers";
+import { PathOfExileWrapper } from "@klayver/poe-api-wrappers";
+
+const poeApi = new PathOfExileWrapper();
+await poeApi.requestLeagues();
 ```
 
-Before making requests to the official API, you should set your user agent, as requested by GGG [here](https://www.pathofexile.com/forum/view-thread/3019033/page/1#p23790007).
+### Default instance
+
+Instead of instantiating a wrapper instance, you can use the default instance.
 
 ```typescript
-PathOfExile.Settings.userAgent = "my-awesome-tool-name, contact@me.com";
+await PathOfExileWrapper.default.requestLeagues();
 ```
 
-You can also define a session ID, which will be used in every request you make. Some endpoints require the session ID to be defined (see documentation).
+### Setting the user agent
+
+Before you can start making requests, you must set your user agent. This is a requirement by Grinding Gear Games. You can either supply an object which will automatically be converted into the format requested by GGG (recommended) or supply a custom string. If you skip this step, you will most likely not be able to make successful requests.
 
 ```typescript
-PathOfExile.Settings.sessionId = "y0uRs3ss10n1dh3r3";
-```
-
-### Get 10 public stash tab chunks and do something with them
-
-```typescript
-let chunk = await PathOfExile.PublicStashTabs.getChunk();
-
-for (let i = 0; i < 9; i++) {
-    console.log(`This chunk has ${chunk.stashes.length} stashes.`);
-    chunk = await chunk.getNext();
-}
-```
-
-### Get the entire Standard league ladder and filter it by online players
-
-```typescript
-// Get the ladder with the first 200 entries
-const ladder = await PathOfExile.Ladders.get("Standard", { limit: 200 });
-
-// Request the remaining entries in chunks of 200 until there are no entries left
-while ((await ladder.getNextEntries()) != null) {
-    console.log(`Current entries: ${ladder.entries.length}`);
-}
-
-// Filter by online players
-const online = ladder.filterBy("online", true);
-console.log(`${online.length}/${ladder.total} players are currently online.`);
-```
-
-### Execute a search query and get the prices for the first 10 results
-
-```typescript
-const query = {
-    query: {
-        status: { option: "online" },
-        name: "Shavronne's Wrappings",
-        type: "Occultist's Vestment",
-    },
-    sort: { price: "asc" },
+poeApi.userAgent = {
+    clientId: "myapp",
+    version: "1.0.0",
+    contact: "myemail@whatever.com",
 };
 
-const search = await PathOfExile.Trade.search("Standard", query);
-const results = await search.getNextItems();
-
-if (results != null) {
-    for (const result of results) {
-        const price = result.listing.price;
-        console.log(`Item is being sold for ${price.amount} ${price.currency}`);
-    }
-}
+// Alternatively, use a custom string
+poeApi.userAgent = "custom user agent";
 ```
 
-## poe.ninja API
+## Example usage
 
-### Setup
+_To keep this example short, it is assumed that certain elements exist (first ladder entry) and data is accessible (character list is public). You should always make sure that the request you want to make is valid._
+
+In this example, we will do the following:
+
+1. Get an overview of the Standard league on the PC realm
+2. Get the ladder of the league sorted by solo Delve depth
+3. Get the items of the rank 1 character on the ladder
+
+### Requesting data on wrapper instance
+
+You can just request everything directly on the wrapper and use the data from previous responses as parameters.
 
 ```typescript
-import { Ninja } from "@klayver/poe-api-wrappers";
+const league = await poeApi.requestLeagues("Standard", { realm: "pc" });
+const ladder = await poeApi.requestLadder(league.id, { sort: "depthsolo" });
+const player = ladder[0];
+const items = await poeApi.requestCharacterItems(player.account.name, player.character.name);
 ```
 
-### Get currency exchange rates for currency items in Standard league
+### Requesting associated data on response objects
+
+Alternatively, you can request associated data by calling request methods on the response objects themselves. This way, you don't need to pass data from previous responses.
 
 ```typescript
-const collection = await Ninja.Currency.get("Standard", "Currency");
-
-for (const currency of collection.entries) {
-    console.log(`${currency.name} costs ${currency.chaosEquivalent} Chaos Orb`);
-}
+const league = await poeApi.requestLeague("Standard", { realm: "pc" });
+const ladder = await league.requestLadder({ sort: "depthsolo" });
+const player = ladder[0];
+const items = await player.character.requestItems();
 ```
 
-## Handling errors
-
-Requests to the Path of Exile API throw custom errors when something goes wrong. The thrown custom error class include the same error codes as the ones documented in the [official developer API documentation](https://www.pathofexile.com/developer/docs/index#errors). Please note that you should also check for other errors, which might occur when, for example, no internet connection is available.
+Please note that when calling request methods on response objects, the [default instance](#default-instance) of the wrapper will be used. If you need to make the request from a specific instance, you can pass it as a parameter.
 
 ```typescript
-try {
-    await PathOfExile.Account.getProfile();
-} catch (error: unknown) {
-    if (error instanceof PathOfExile.APIError) {
-        console.log(`Request failed with code ${error.code}: ${error.message}`);
-    }
-
-    // Handle other errors...
-}
+const ladder = await league.requestLadder({ sort: "depthsolo" }, poeApiInstance);
 ```
+
+# Path of Exile OAuth Wrapper
+
+...
+
+# poe.ninja Wrapper
+
+...
