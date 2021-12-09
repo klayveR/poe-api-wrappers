@@ -16,7 +16,7 @@ export abstract class Wrapper {
     }
 
     /**
-     * The last request made with this wrapper
+     * The response of the latest successful request made with this wrapper
      */
     public get lastResponse(): Response | undefined {
         return this._lastResponse;
@@ -58,7 +58,7 @@ export abstract class Wrapper {
         return plainToInstance(konstructor, response.data);
     }
 
-    private async makeRequest<T>(requestConfig: RequestConfig): Promise<AxiosResponse<unknown, unknown>> {
+    private async makeRequest(requestConfig: RequestConfig): Promise<AxiosResponse<unknown, unknown>> {
         const url = this.buildUrl(requestConfig.endpoint, requestConfig.options);
         const axiosConfig: AxiosRequestConfig = {
             url: url,
@@ -82,7 +82,7 @@ export abstract class Wrapper {
         return response;
     }
 
-    private buildUrl<T>(endpoint: string, options?: object): string {
+    private buildUrl(endpoint: string, options?: object): string {
         if (options == null) {
             return endpoint;
         }
